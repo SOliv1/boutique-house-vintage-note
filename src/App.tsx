@@ -110,7 +110,7 @@ const wardrobeItems: WardrobeItem[] = [
       'A quiet white shirt portrait with warm mirror light, saved as a soft opening note for the sketch archive.',
     price: 'Preview note',
     imageUrl:
-      'https://boutique-house-production-751b.up.railway.app/static/images/products/vintage-notes/riviera-trouser-set.c8458f362173.png',
+      'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781875183/Clood-paper-cottontopCarousel_tnxube.png',
     isComingSoon: true,
     comingSoonCopy: 'Preview image while this piece is prepared.',
     originalUrl: 'https://boutique-house-production-751b.up.railway.app/products/?collection=vintage_notes',
