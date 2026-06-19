@@ -302,15 +302,19 @@ h3 {
 
 .wardrobe-image {
   position: relative;
-  min-height: 220px;
+  min-height: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
   background: #d7d5c6;
+  isolation: isolate;
 }
 
 .wardrobe-image img {
   display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  aspect-ratio: 4 / 3;
   object-fit: cover;
   opacity: 0.72;
   filter: saturate(0.88);
@@ -324,6 +328,7 @@ h3 {
 .wardrobe-coming-soon-veil {
   position: absolute;
   inset: 0;
+  z-index: 1;
   display: grid;
   place-items: center;
   padding: 1.3rem;
@@ -335,6 +340,8 @@ h3 {
 .wardrobe-coming-soon-panel {
   display: grid;
   width: min(78%, 340px);
+  max-height: calc(100% - 2rem);
+  overflow: hidden;
   gap: 0.5rem;
   padding: 1rem 1.2rem;
   border: 1px solid rgba(255, 250, 242, 0.72);

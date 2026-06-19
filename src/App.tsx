@@ -208,7 +208,7 @@ function App() {
             {notes.map((note) => (
               <article
                 className={`note-card accent-${note.accent}`}
-                id={note.id}
+                id={note.id === 'the-wardrobe' ? 'the-wardrobe-note' : note.id}
                 key={note.title}
               >
                 <p>{note.period}</p>
@@ -231,7 +231,7 @@ function App() {
           </p>
         </section>
 
-        <section className="content-section wardrobe-section" aria-labelledby="wardrobe-title">
+        <section id="the-wardrobe" className="content-section wardrobe-section" aria-labelledby="wardrobe-title">
           <div className="section-heading section-heading-wide">
             <div>
               <p className="eyebrow">The wardrobe</p>
