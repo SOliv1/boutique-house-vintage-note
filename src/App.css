@@ -359,11 +359,6 @@ h3 {
   text-transform: uppercase;
 }
 
-.wardrobe-coming-soon-copy {
-  font-size: clamp(0.9rem, 1.7vw, 1.05rem);
-  line-height: 1.35;
-}
-
 .wardrobe-copy {
   display: flex;
   min-height: 300px;

@@ -254,9 +254,6 @@ function App() {
                     <div className="wardrobe-coming-soon-veil" aria-label={`${item.title} coming soon`}>
                       <span className="wardrobe-coming-soon-panel">
                         <span className="wardrobe-coming-soon-label">Coming Soon</span>
-                        <span className="wardrobe-coming-soon-copy">
-                          {item.comingSoonCopy || 'Preview image while this piece is prepared.'}
-                        </span>
                       </span>
                     </div>
                   )}
