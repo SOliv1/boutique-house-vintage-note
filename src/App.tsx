@@ -20,6 +20,9 @@ type WardrobeItem = {
   category: string
   description: string
   price: string
+  imageUrl?: string
+  isComingSoon?: boolean
+  comingSoonCopy?: string
   originalUrl?: string
 }
 
@@ -88,6 +91,30 @@ const findings: Finding[] = [
 ]
 
 const wardrobeItems: WardrobeItem[] = [
+  {
+    title: 'Munich Stripe Blouse & Leather Skirt',
+    category: 'Timeless Dressing',
+    description:
+      'A cobalt stripe blouse and black leather skirt study, held as an atmospheric preview from the Munich story.',
+    price: 'Preview note',
+    imageUrl:
+      'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781730284/Munich-timeless-dressing_moera9.png',
+    isComingSoon: true,
+    comingSoonCopy: 'Preview image while this wardrobe note is prepared.',
+    originalUrl: 'https://boutique-house-production-751b.up.railway.app/products/?category=timeless_dressing',
+  },
+  {
+    title: 'White Shirt Mirror Study',
+    category: 'Early Sketch Collection',
+    description:
+      'A quiet white shirt portrait with warm mirror light, saved as a soft opening note for the sketch archive.',
+    price: 'Preview note',
+    imageUrl:
+      'https://boutique-house-production-751b.up.railway.app/static/images/products/vintage-notes/riviera-trouser-set.c8458f362173.png',
+    isComingSoon: true,
+    comingSoonCopy: 'Preview image while this piece is prepared.',
+    originalUrl: 'https://boutique-house-production-751b.up.railway.app/products/?collection=vintage_notes',
+  },
   {
     title: 'Linen Tailored Set',
     category: 'Timeless Dressing',
@@ -217,9 +244,22 @@ function App() {
           </div>
           <div className="wardrobe-grid">
             {wardrobeItems.map((item) => (
-              <article className="wardrobe-card" key={item.title}>
-                <div className="wardrobe-image" aria-hidden="true">
-                  <img src={heroImg} alt="" />
+              <article
+                className={`wardrobe-card${item.isComingSoon ? ' wardrobe-card--coming-soon' : ''}`}
+                key={item.title}
+              >
+                <div className="wardrobe-image">
+                  <img src={item.imageUrl || heroImg} alt={item.title} />
+                  {item.isComingSoon && (
+                    <div className="wardrobe-coming-soon-veil" aria-label={`${item.title} coming soon`}>
+                      <span className="wardrobe-coming-soon-panel">
+                        <span className="wardrobe-coming-soon-label">Coming Soon</span>
+                        <span className="wardrobe-coming-soon-copy">
+                          {item.comingSoonCopy || 'Preview image while this piece is prepared.'}
+                        </span>
+                      </span>
+                    </div>
+                  )}
                 </div>
                 <div className="wardrobe-copy">
                   <p>{item.category}</p>

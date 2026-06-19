@@ -316,6 +316,47 @@ h3 {
   filter: saturate(0.88);
 }
 
+.wardrobe-card--coming-soon .wardrobe-image img {
+  opacity: 0.52;
+  filter: saturate(0.72) contrast(0.92);
+}
+
+.wardrobe-coming-soon-veil {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1.3rem;
+  background:
+    linear-gradient(180deg, rgba(18, 16, 15, 0.12), rgba(18, 16, 15, 0.4)),
+    rgba(255, 250, 242, 0.12);
+}
+
+.wardrobe-coming-soon-panel {
+  display: grid;
+  width: min(78%, 340px);
+  gap: 0.5rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(255, 250, 242, 0.72);
+  background: rgba(255, 250, 242, 0.2);
+  color: #fffaf2;
+  text-align: center;
+  text-shadow: 0 1px 18px rgba(18, 16, 15, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.wardrobe-coming-soon-label {
+  font-size: clamp(0.88rem, 1.7vw, 1.05rem);
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.wardrobe-coming-soon-copy {
+  font-size: clamp(0.9rem, 1.7vw, 1.05rem);
+  line-height: 1.35;
+}
+
 .wardrobe-copy {
   display: flex;
   min-height: 300px;
