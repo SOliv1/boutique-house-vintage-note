@@ -377,6 +377,235 @@ h3 {
   text-transform: uppercase;
 }
 
+.wardrobe-alternative {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.65fr) minmax(0, 1.35fr);
+  gap: clamp(1.5rem, 5vw, 5rem);
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid rgba(33, 28, 26, 0.14);
+  background: #f6f0d8;
+}
+
+.wardrobe-alternative-heading h3 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+}
+
+.wardrobe-alternative-heading span {
+  display: block;
+  margin-top: 1rem;
+  color: #7a332c;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.wardrobe-alternative-story {
+  color: #4e4741;
+}
+
+.wardrobe-alternative-story p {
+  margin: 0 0 0.9rem;
+}
+
+.wardrobe-alternative-story blockquote {
+  margin: 1.4rem 0 0;
+  padding: 1rem 0 0 1.2rem;
+  border-top: 1px solid rgba(33, 28, 26, 0.14);
+  border-left: 3px solid #8c2633;
+  color: #213f3a;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.25;
+}
+
+.collector-story {
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  border: 1px solid rgba(33, 28, 26, 0.14);
+  background: #f4eee5;
+}
+
+.collector-story-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: end;
+  padding-bottom: clamp(1.5rem, 4vw, 3rem);
+  border-bottom: 1px solid rgba(33, 28, 26, 0.14);
+}
+
+.collector-story-header h3 {
+  max-width: 900px;
+  font-size: clamp(2.7rem, 6vw, 5.5rem);
+}
+
+.collector-story-meta {
+  display: grid;
+  gap: 0.45rem;
+  color: #7a332c;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.collector-story-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: clamp(1.5rem, 4vw, 3rem) 0 0;
+  background: rgba(33, 28, 26, 0.18);
+}
+
+.collector-story-image {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #d9d3c9;
+}
+
+.collector-story-image img {
+  display: block;
+  width: 100%;
+  max-height: 780px;
+  object-fit: contain;
+}
+
+.collector-story-image figcaption {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  width: fit-content;
+  max-width: calc(100% - 2rem);
+  padding: 0.6rem 0.8rem;
+  background: rgba(33, 28, 26, 0.78);
+  color: #fffaf2;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.collector-gallery-caption {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.7fr) minmax(0, 1.3fr);
+  gap: clamp(1.5rem, 5vw, 5rem);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid rgba(33, 28, 26, 0.14);
+  border-top: 0;
+  background: #fffaf2;
+  color: #4e4741;
+}
+
+.collector-gallery-caption-title h4 {
+  margin: 0 0 0.55rem;
+  color: #211c1a;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.collector-gallery-caption-title p {
+  margin: 0 0 0.35rem;
+  color: #7a332c;
+  font-weight: 700;
+}
+
+.collector-gallery-caption-title span {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.collector-gallery-caption-copy p {
+  margin: 0 0 0.85rem;
+}
+
+.collector-gallery-caption-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.collector-story-intro {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.65fr) minmax(0, 1.35fr);
+  gap: clamp(1.5rem, 5vw, 5rem);
+  padding: clamp(1.5rem, 4vw, 3rem) 0;
+}
+
+.collector-story-intro p {
+  margin: 0;
+  color: #213f3a;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  line-height: 1;
+}
+
+.collector-story-intro span {
+  color: #4e4741;
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+}
+
+.collector-story-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: clamp(2rem, 6vw, 6rem);
+}
+
+.collector-story-copy {
+  color: #4e4741;
+  font-size: 1.02rem;
+}
+
+.collector-story-copy > p {
+  margin: 0 0 1rem;
+}
+
+.collector-story-copy .collector-story-emphasis {
+  margin: 1.5rem 0;
+  color: #8c2633;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1;
+}
+
+.collector-story-closing {
+  display: grid;
+  gap: 0.25rem;
+  margin-top: 1.8rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(33, 28, 26, 0.14);
+  color: #213f3a;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.designer-note {
+  align-self: start;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-top: 4px solid #276f8f;
+  background: #e5f0f3;
+  color: #3f4b4e;
+}
+
+.designer-note h4 {
+  margin: 0 0 1rem;
+  color: #213f3a;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.designer-note p:not(.eyebrow) {
+  margin: 0 0 1rem;
+}
+
 .wardrobe-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -529,8 +758,24 @@ h3 {
   .hero-section,
   .split-section,
   .section-heading-wide,
-  .wardrobe-feature {
+  .wardrobe-feature,
+  .wardrobe-alternative,
+  .collector-story-header,
+  .collector-story-intro,
+  .collector-story-layout {
     grid-template-columns: 1fr;
+  }
+
+  .collector-gallery-caption {
+    grid-template-columns: 1fr;
+  }
+
+  .collector-story-meta {
+    text-align: left;
+  }
+
+  .collector-story-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .wardrobe-feature-gallery {
@@ -573,6 +818,10 @@ h3 {
   .wardrobe-feature-gallery {
     grid-template-columns: 1fr;
     min-height: auto;
+  }
+
+  .collector-story-gallery {
+    grid-template-columns: 1fr;
   }
 
   .wardrobe-feature-image {

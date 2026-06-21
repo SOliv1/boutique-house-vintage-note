@@ -266,31 +266,229 @@ function App() {
               <h3 id="bright-white-shorts-title">Bright-White Structured Shorts</h3>
               <p className="wardrobe-feature-lede">
                 Bright-white structured cotton shorts, circa 1985/86. Naturally crisp
-                with the option to starch for a sharper Sydney–Paddington line.
+                with the option to starch for a sharper Sydney 'Paddington' line.
               </p>
               <div className="wardrobe-feature-story">
                 <p>
                   In the sunlit streets of Guernsey and the breezy coastal towns, these
                   bright-white cotton shorts were more than clothing: they were a statement
-                  of understated style and practical elegance. Dense, structured cotton
-                  held its shape naturally, while a light starch could sharpen the line
-                  without overpowering its soft, breathable comfort.
+                  of understated style and practical elegance. They were made not from
+                  percale, poplin, or drill, but from good, dense, structured cotton: a
+                  cloth that held its shape naturally and could take starch without
+                  relying on it.
                 </p>
                 <p>
-                  Worn with a simple tee or tucked shirt, they embodied the relaxed yet
-                  refined spirit of the mid-eighties. Their clean silhouette felt equally
-                  at home by the sea or among the Sydney–Paddington lanes.
+                  A light starch belonged naturally to the mid-eighties. It gave white
+                  shorts a clean, architectural line while preserving the ease of cotton.
+                  Worn with a simple tee or tucked shirt, the silhouette stayed minimal,
+                  sun-fresh, and quietly refined.
                 </p>
                 <p>
-                  Their charm is in that versatility: polished when starched, easy when
-                  left soft. A quiet reminder of a time when fashion balanced function
-                  with form, and every detail mattered.
+                  The coastal ease of Guernsey found a kindred spirit in Sydney’s leafy
+                  East Side: Paddington lanes, lace-trimmed wrought-iron houses, and summer
+                  dressing shaped by light and air. Whether sharpened with starch or left
+                  softly natural, this pair moved comfortably between both worlds.
+                </p>
+                <p>
+                  Their charm lies in that versatility—polished without being formal,
+                  relaxed without losing their shape. A quiet piece of history woven into
+                  fabric, carrying the light and life of the mid-eighties wherever it goes.
                 </p>
               </div>
               <footer className="wardrobe-feature-footer">
                 <strong>Archive note</strong>
                 <span>Dense cotton · starch-optional</span>
               </footer>
+            </div>
+          </article>
+          <article className="wardrobe-alternative" aria-labelledby="white-lines-title">
+            <div className="wardrobe-alternative-heading">
+              <p className="eyebrow">Alternative editorial story</p>
+              <h3 id="white-lines-title">White Lines of Summer</h3>
+              <span>Guernsey to Paddington · 1985/86</span>
+            </div>
+            <div className="wardrobe-alternative-story">
+              <p>
+                There is a particular kind of white that belongs to summer: bright against
+                the Guernsey coast, crisp beneath Sydney sun, and softened only by wear.
+                These structured cotton shorts held that light in their clean pleats and
+                easy, generous line.
+              </p>
+              <p>
+                Their fabric was simple and assured—not percale, poplin, or drill, but a
+                dense cotton with enough body to stand beautifully on its own. A touch of
+                starch could make the silhouette more architectural; without it, the shorts
+                relaxed into the unstudied ease of a tee, a tucked shirt, and bare summer days.
+              </p>
+              <p>
+                From Guernsey’s sea air to the lace verandas and leafy streets of Paddington,
+                they speak the same language: bright white, thoughtful structure, and the
+                enduring pleasure of clothes that know exactly what they are.
+              </p>
+              <blockquote>Structured bright-white shorts, 1985/86. Clean, crisp, starch-optional.</blockquote>
+            </div>
+          </article>
+          <article className="collector-story" aria-labelledby="elephant-skirt-title">
+            <header className="collector-story-header">
+              <div>
+                <p className="eyebrow">Wardrobe Stories · Collector’s Edition</p>
+                <h3 id="elephant-skirt-title">Cerulean Top &amp; Elephant Motif A-Line Skirt</h3>
+              </div>
+              <div className="collector-story-meta">
+                <span>Circa 1977–78</span>
+                <span>Prue Acton · Melbourne</span>
+              </div>
+            </header>
+
+            <div
+              className="collector-story-gallery"
+              aria-label="Elephant motif ensemble photographs"
+              aria-describedby="elephant-gallery-caption"
+            >
+              <figure className="collector-story-image">
+                <img
+                  src="https://res.cloudinary.com/dwpvbtoad/image/upload/v1781861457/D5B2F488-1ED6-4AE4-B17D-F5D1A25718A1_nqbdyz.jpg"
+                  alt="Cerulean top and Elephant motif A-line skirt from the late 1970s"
+                  loading="lazy"
+                />
+                <figcaption>
+                  The Elephant motif ensemble · Melbourne, circa 1977–78
+                </figcaption>
+              </figure>
+              <figure className="collector-story-image">
+                <img
+                  src="https://res.cloudinary.com/dwpvbtoad/image/upload/v1781861077/IMG_7971_nc2txq.jpg"
+                  alt="Archival detail view of the Elephant motif outfit"
+                  loading="lazy"
+                />
+                <figcaption>Collector’s view · Colour, structure, and appliqué</figcaption>
+              </figure>
+              <figure className="collector-story-image">
+                <img
+                  src="https://res.cloudinary.com/dwpvbtoad/image/upload/v1781853027/IMG_7971_pfbqzr.jpg"
+                  alt="Additional archival view of the cerulean and Elephant motif ensemble"
+                  loading="lazy"
+                />
+                <figcaption>Archive view · A wearable piece of art</figcaption>
+              </figure>
+              <figure className="collector-story-image">
+                <img
+                  src="https://res.cloudinary.com/dwpvbtoad/image/upload/v1781853024/IMG_7972_hx5f7w.jpg"
+                  alt="Archival view showing the Elephant appliqué and structured A-line silhouette"
+                  loading="lazy"
+                />
+                <figcaption>Motif study · The Elephant in motion</figcaption>
+              </figure>
+            </div>
+            <div className="collector-gallery-caption" id="elephant-gallery-caption">
+              <div className="collector-gallery-caption-title">
+                <h4>Cerulean Top &amp; Elephant Motif A-Line Skirt</h4>
+                <p>Prue Acton, Melbourne, c.1977–78</p>
+                <span>Cotton, appliqué · Limited Collector’s Series</span>
+              </div>
+              <div className="collector-gallery-caption-copy">
+                <p>
+                  Designed by Prue Acton OBE, one of Australia’s most influential fashion
+                  designers of the 1960s–80s, this ensemble forms part of a short-run series
+                  featuring bold walking-animal motifs. Produced in Melbourne during Acton’s
+                  late-1970s creative period, the skirts were made in limited numbers and
+                  became highly sought after among schoolgirls, who each chose a different
+                  design. Known examples include the Elephant, Tiger, and Giraffe.
+                </p>
+                <p>
+                  Acton’s work from this era is celebrated for its vibrant colour, youthful
+                  silhouettes, and modern Australian aesthetic. Pieces from her label are
+                  now held in major museum collections, including Museums Victoria and the
+                  Powerhouse Museum. This set represents a rare surviving example of her
+                  wildlife appliqué series and reflects the designer’s enduring interest in
+                  colour, movement, and textile storytelling.
+                </p>
+              </div>
+            </div>
+
+            <div className="collector-story-intro">
+              <p>Smart. Vibrant. Unforgettable.</p>
+              <span>
+                A limited vintage recreation—and the memory of a small, unofficial
+                club marked by colour, character, and friendship.
+              </span>
+            </div>
+
+            <div className="collector-story-layout">
+              <div className="collector-story-copy">
+                <p>
+                  This ensemble began its life in Melbourne in the late 1970s, created
+                  during a short, brilliant run of collectible wildlife skirts. Each
+                  featured a different animal in bold appliqué—walking, striding, or
+                  turning across the fabric as if caught mid-story. Produced in limited
+                  numbers and sold quietly, they were worn proudly by a certain circle
+                  of girls who understood what they were.
+                </p>
+                <p className="collector-story-emphasis">I was one of them.</p>
+                <p>
+                  We were school friends, each with our own motif. The Elephant was mine:
+                  a soft grey appliqué stitched onto a stiff cotton A-line skirt, its form
+                  moving from side to front as you walked. Others wore the Tiger, the
+                  Giraffe, and a handful of designs I can no longer fully recall—only that
+                  they were vivid, confident, and instantly recognisable. It became our
+                  small, unofficial club, and there was a thrill in wearing something no
+                  one else had.
+                </p>
+                <p>
+                  The top was always cerulean. Soft cotton, short sleeves, and a gentle,
+                  flattering shape balanced the structure of the skirt. It was not meant
+                  to compete; it framed the artwork. Together the pieces created a
+                  silhouette that felt youthful yet composed—summer’s best wear:
+                  light-catching, easy, and memorable.
+                </p>
+                <p>
+                  Cut, stitched, and appliquéd by hand in a Melbourne studio, no two skirts
+                  were exactly alike. Cerulean, saffron, deep green, and warm grey echoed
+                  the Australian landscape without imitating it. The animals were stylised
+                  but full of personality, each walking with a sense of purpose.
+                </p>
+                <p>
+                  The Elephant skirt became my favourite. It caught the light at every
+                  hour and moved with me. It felt like a small piece of art I could wear,
+                  carrying school corridors, summer heat, and the feeling of belonging
+                  to something quietly special.
+                </p>
+                <p>
+                  Today, the set stands as a Limited Vintage Recreation: a rare survivor
+                  preserved with care for The Wardrobe—Collector’s Edition. It remembers
+                  a designer who created joy in cotton and thread, and a moment when
+                  clothing felt like a shared secret between friends.
+                </p>
+                <footer className="collector-story-closing">
+                  <span>A delightful, timeless piece.</span>
+                  <strong>A story worth keeping.</strong>
+                </footer>
+              </div>
+
+              <aside className="designer-note" aria-labelledby="prue-acton-title">
+                <p className="eyebrow">The designer · In brief</p>
+                <h4 id="prue-acton-title">Prue Acton OBE</h4>
+                <p>
+                  One of Australia’s most influential designers of the 1960s–80s, Prue
+                  Acton became known for bold colour, youthful silhouettes, and a distinctly
+                  modern Australian aesthetic. She launched her label in Melbourne at 19,
+                  built an international following, became the first Australian female
+                  designer to show in New York, and created uniforms for three Olympic Games.
+                </p>
+                <p>
+                  Her vibrant textiles and distinctive appliqué work now belong to museum
+                  collections including Museums Victoria and Sydney’s Powerhouse. The late-
+                  seventies Elephant, Tiger, and Giraffe motifs sit naturally within this
+                  creative period: vivid, characterful, and part of Australia’s broader
+                  design history.
+                </p>
+                <p>
+                  Acton always considered herself an artist first. In the 1980s she stepped
+                  away from commercial fashion and returned to painting, later co-founding
+                  Moriarty Colour to advance contemporary colour education. That dual legacy—
+                  pioneering designer and committed colourist—gives her work its rare depth.
+                </p>
+              </aside>
             </div>
           </article>
           <div className="wardrobe-grid">
