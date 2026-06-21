@@ -156,9 +156,38 @@ h3 {
   margin: 0;
 }
 
+.vintage-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.vintage-carousel::before,
+.vintage-carousel::after {
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  width: 80px;
+  height: 260px;
+  content: '';
+  pointer-events: none;
+}
+
+.vintage-carousel::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(20, 18, 30, 0.6), transparent);
+}
+
+.vintage-carousel::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(20, 18, 30, 0.6), transparent);
+}
+
 .carousel-viewport {
   position: relative;
   overflow: hidden;
+  border-radius: 12px;
   border: 1px solid rgba(33, 28, 26, 0.16);
   background: #d7d5c6;
   box-shadow: 0 24px 70px rgba(33, 28, 26, 0.16);
@@ -166,75 +195,45 @@ h3 {
 
 .carousel-track {
   display: flex;
-  transition: transform 500ms ease;
+  width: max-content;
+  gap: 20px;
+  padding-right: 20px;
+  animation: carousel-scroll 28s linear infinite;
 }
 
 .hero-media .carousel-track img {
   display: block;
-  min-width: 100%;
-  aspect-ratio: 4 / 5;
+  width: auto;
+  height: 260px;
+  border-radius: 12px;
   object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
-.carousel-controls {
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-  left: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  pointer-events: none;
+.carousel-viewport:hover .carousel-track,
+.carousel-viewport:focus-visible .carousel-track {
+  animation-play-state: paused;
 }
 
-.carousel-controls button {
-  display: grid;
-  width: 42px;
-  height: 42px;
-  padding: 0;
-  border: 1px solid rgba(255, 250, 242, 0.72);
-  border-radius: 50%;
-  background: rgba(33, 28, 26, 0.72);
-  color: #fffaf2;
-  cursor: pointer;
-  font-size: 1.8rem;
-  line-height: 1;
-  place-items: center;
-  pointer-events: auto;
+.carousel-viewport:focus-visible {
+  outline: 3px solid #8c2633;
+  outline-offset: 4px;
 }
 
-.carousel-controls button:hover,
-.carousel-controls button:focus-visible {
-  background: #213f3a;
+@keyframes carousel-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-.carousel-controls span {
-  padding: 0.4rem 0.65rem;
-  border-radius: 999px;
-  background: rgba(33, 28, 26, 0.72);
-  color: #fffaf2;
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-}
-
-.carousel-dots {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  margin-top: 0.85rem;
-}
-
-.carousel-dots button {
-  width: 28px;
-  height: 4px;
-  padding: 0;
-  border: 0;
-  background: rgba(33, 28, 26, 0.22);
-  cursor: pointer;
-}
-
-.carousel-dots button.is-active {
-  background: #8c2633;
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    animation: none;
+  }
 }
 
 .hero-media figcaption {

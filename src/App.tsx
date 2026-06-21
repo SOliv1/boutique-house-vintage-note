@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import heroImg from './assets/hero.png'
 import brightWhiteShortsGuernsey from './assets/wardrobe/bright-white-shorts-guernsey.png'
 import brightWhiteShortsStudio from './assets/wardrobe/bright-white-shorts-studio.png'
@@ -197,16 +196,6 @@ const wardrobeItems: WardrobeItem[] = [
 ]
 
 function App() {
-  const [heroSlide, setHeroSlide] = useState(0)
-
-  const showPreviousHeroSlide = () => {
-    setHeroSlide((current) => (current - 1 + heroSlides.length) % heroSlides.length)
-  }
-
-  const showNextHeroSlide = () => {
-    setHeroSlide((current) => (current + 1) % heroSlides.length)
-  }
-
   return (
     <div className="site-shell">
       <header className="site-header" aria-label="Main navigation">
@@ -243,45 +232,20 @@ function App() {
             </div>
           </div>
           <figure className="hero-media vintage-carousel" aria-label="Vintage wardrobe carousel">
-            <div className="carousel-viewport" aria-live="polite">
-              <div
-                className="carousel-track"
-                style={{ transform: `translateX(-${heroSlide * 100}%)` }}
-              >
-                {heroSlides.map((slide, index) => (
+            <div className="carousel-viewport" tabIndex={0}>
+              <div className="carousel-track">
+                {[...heroSlides, ...heroSlides].map((slide, index) => (
                   <img
                     src={slide.src}
                     alt={slide.alt}
                     loading={index === 0 ? 'eager' : 'lazy'}
-                    key={slide.src}
+                    aria-hidden={index >= heroSlides.length ? 'true' : undefined}
+                    key={`${slide.src}-${index}`}
                   />
                 ))}
               </div>
-              <div className="carousel-controls">
-                <button type="button" onClick={showPreviousHeroSlide} aria-label="Previous image">
-                  ‹
-                </button>
-                <span>{heroSlide + 1} / {heroSlides.length}</span>
-                <button type="button" onClick={showNextHeroSlide} aria-label="Next image">
-                  ›
-                </button>
-              </div>
             </div>
-            <div className="carousel-dots" aria-label="Choose a carousel image">
-              {heroSlides.map((slide, index) => (
-                <button
-                  type="button"
-                  className={index === heroSlide ? 'is-active' : ''}
-                  onClick={() => setHeroSlide(index)}
-                  aria-label={`Show image ${index + 1}: ${slide.alt}`}
-                  aria-current={index === heroSlide ? 'true' : undefined}
-                  key={slide.src}
-                />
-              ))}
-            </div>
-            <figcaption>
-              {heroSlides[heroSlide].alt}. Quiet pieces, useful memories, carefully kept.
-            </figcaption>
+            <figcaption>Quiet pieces, useful memories, carefully kept.</figcaption>
           </figure>
         </section>
 
