@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import heroImg from './assets/hero.png'
 import brightWhiteShortsGuernsey from './assets/wardrobe/bright-white-shorts-guernsey.png'
 import brightWhiteShortsStudio from './assets/wardrobe/bright-white-shorts-studio.png'
@@ -32,6 +33,37 @@ type HoverCaptionProps = {
   children: string
   caption: string
 }
+
+const heroSlides = [
+  {
+    src: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781876234/boutique_pair_1_neqqx2.png',
+    alt: 'Boutique Pair 1',
+  },
+  {
+    src: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781876234/boutique_pair_2_lse1sd.png',
+    alt: 'Boutique Pair 2',
+  },
+  {
+    src: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781876237/boutique_pair_3_upv72x.png',
+    alt: 'Boutique Pair 3',
+  },
+  {
+    src: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781879429/Cotton-voile-fragment_xwgec7.png',
+    alt: 'Cotton voile fragment',
+  },
+  {
+    src: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781879310/jet-shimmer-evening_au0h38.png',
+    alt: 'Jet shimmer evening ensemble',
+  },
+  {
+    src: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1782077393/kept-memory-collage_e8vdpj.png',
+    alt: 'Kept Memory collage',
+  },
+  {
+    src: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1782082071/cotton-voile-shimmer-skirt2_ubdmxu.png',
+    alt: 'Cotton voile blouse and shimmer skirt',
+  },
+]
 
 function HoverCaption({ children, caption }: HoverCaptionProps) {
   return (
@@ -165,6 +197,16 @@ const wardrobeItems: WardrobeItem[] = [
 ]
 
 function App() {
+  const [heroSlide, setHeroSlide] = useState(0)
+
+  const showPreviousHeroSlide = () => {
+    setHeroSlide((current) => (current - 1 + heroSlides.length) % heroSlides.length)
+  }
+
+  const showNextHeroSlide = () => {
+    setHeroSlide((current) => (current + 1) % heroSlides.length)
+  }
+
   return (
     <div className="site-shell">
       <header className="site-header" aria-label="Main navigation">
@@ -200,9 +242,46 @@ function App() {
               </a>
             </div>
           </div>
-          <figure className="hero-media">
-            <img src={heroImg} alt="Soft editorial still life used as a vintage mood image" />
-            <figcaption>Quiet pieces, useful memories, carefully kept.</figcaption>
+          <figure className="hero-media vintage-carousel" aria-label="Vintage wardrobe carousel">
+            <div className="carousel-viewport" aria-live="polite">
+              <div
+                className="carousel-track"
+                style={{ transform: `translateX(-${heroSlide * 100}%)` }}
+              >
+                {heroSlides.map((slide, index) => (
+                  <img
+                    src={slide.src}
+                    alt={slide.alt}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    key={slide.src}
+                  />
+                ))}
+              </div>
+              <div className="carousel-controls">
+                <button type="button" onClick={showPreviousHeroSlide} aria-label="Previous image">
+                  ‹
+                </button>
+                <span>{heroSlide + 1} / {heroSlides.length}</span>
+                <button type="button" onClick={showNextHeroSlide} aria-label="Next image">
+                  ›
+                </button>
+              </div>
+            </div>
+            <div className="carousel-dots" aria-label="Choose a carousel image">
+              {heroSlides.map((slide, index) => (
+                <button
+                  type="button"
+                  className={index === heroSlide ? 'is-active' : ''}
+                  onClick={() => setHeroSlide(index)}
+                  aria-label={`Show image ${index + 1}: ${slide.alt}`}
+                  aria-current={index === heroSlide ? 'true' : undefined}
+                  key={slide.src}
+                />
+              ))}
+            </div>
+            <figcaption>
+              {heroSlides[heroSlide].alt}. Quiet pieces, useful memories, carefully kept.
+            </figcaption>
           </figure>
         </section>
 

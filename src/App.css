@@ -156,13 +156,85 @@ h3 {
   margin: 0;
 }
 
-.hero-media img {
+.carousel-viewport {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(33, 28, 26, 0.16);
+  background: #d7d5c6;
+  box-shadow: 0 24px 70px rgba(33, 28, 26, 0.16);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 500ms ease;
+}
+
+.hero-media .carousel-track img {
   display: block;
-  width: 100%;
+  min-width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  border: 1px solid rgba(33, 28, 26, 0.16);
-  box-shadow: 0 24px 70px rgba(33, 28, 26, 0.16);
+}
+
+.carousel-controls {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.carousel-controls button {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid rgba(255, 250, 242, 0.72);
+  border-radius: 50%;
+  background: rgba(33, 28, 26, 0.72);
+  color: #fffaf2;
+  cursor: pointer;
+  font-size: 1.8rem;
+  line-height: 1;
+  place-items: center;
+  pointer-events: auto;
+}
+
+.carousel-controls button:hover,
+.carousel-controls button:focus-visible {
+  background: #213f3a;
+}
+
+.carousel-controls span {
+  padding: 0.4rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(33, 28, 26, 0.72);
+  color: #fffaf2;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+}
+
+.carousel-dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.85rem;
+}
+
+.carousel-dots button {
+  width: 28px;
+  height: 4px;
+  padding: 0;
+  border: 0;
+  background: rgba(33, 28, 26, 0.22);
+  cursor: pointer;
+}
+
+.carousel-dots button.is-active {
+  background: #8c2633;
 }
 
 .hero-media figcaption {
