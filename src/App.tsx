@@ -28,6 +28,19 @@ type WardrobeItem = {
   originalUrl?: string
 }
 
+type HoverCaptionProps = {
+  children: string
+  caption: string
+}
+
+function HoverCaption({ children, caption }: HoverCaptionProps) {
+  return (
+    <span className="hover-caption" data-caption={caption} tabIndex={0}>
+      {children}
+    </span>
+  )
+}
+
 const notes: Note[] = [
   {
     id: 'early-sketch-collection',
@@ -374,35 +387,93 @@ function App() {
               <li>
                 <strong>1981</strong>
                 <span>
-                  Phil Collins releases <em>In the Air Tonight</em>, defining the decade’s
+                  Phil Collins releases{' '}
+                  <em>
+                    <HoverCaption caption="1981 · Phil Collins · Atmospheric, coastal, late-evening tone.">
+                      In the Air Tonight
+                    </HoverCaption>
+                  </em>
+                  , shaping the decade’s
                   atmospheric sound.
                 </span>
               </li>
               <li>
                 <strong>1982</strong>
                 <span>
-                  <em>An Officer and a Gentleman</em> premieres. “Up Where We Belong”
-                  becomes a global love theme.
+                  <em>An Officer and a Gentleman</em> premieres. “
+                  <HoverCaption caption="1982 · Joe Cocker & Jennifer Warnes · Romantic, cinematic, uplifting.">
+                    Up Where We Belong
+                  </HoverCaption>
+                  ” becomes a global romantic theme.
                 </span>
               </li>
               <li>
-                <strong>1983–1984</strong>
+                <strong>1983</strong>
                 <span>
-                  Soft-rock, coastal pop, and cinematic romance dominate radio across
-                  Sydney’s eastern suburbs.
+                  The Police release{' '}
+                  <em>
+                    <HoverCaption caption="1983 · The Police · Iconic, steady, instantly recognisable.">
+                      Every Breath You Take
+                    </HoverCaption>
+                  </em>
+                  , one of the most
+                  recognisable songs of the era.
+                </span>
+              </li>
+              <li>
+                <strong>1984</strong>
+                <span>
+                  Sade’s{' '}
+                  <em>
+                    <HoverCaption caption="1984 · Sade · Elegant, cool, sophisticated.">
+                      Smooth Operator
+                    </HoverCaption>
+                  </em>{' '}
+                  defines the cool, elegant sound of
+                  mid-eighties evenings.
                 </span>
               </li>
               <li>
                 <strong>1985</strong>
                 <span>
-                  Bright whites, structured cotton, and clean silhouettes appear in
-                  boutiques from Double Bay to Paddington.
+                  Whitney Houston releases{' '}
+                  <em>
+                    <HoverCaption caption="1985 · Whitney Houston · Soft, romantic, late-night Sydney.">
+                      Saving All My Love for You
+                    </HoverCaption>
+                  </em>
+                  , adding a
+                  soft-romantic tone to the year.
+                </span>
+              </li>
+              <li>
+                <strong>1985</strong>
+                <span>
+                  Dire Straits release{' '}
+                  <em>
+                    <HoverCaption caption="1985 · Dire Straits · Global hit, MTV-defining.">
+                      Money for Nothing
+                    </HoverCaption>
+                  </em>{' '}
+                  and{' '}
+                  <em>
+                    <HoverCaption caption="1985 · Dire Straits · Bright, upbeat, boutique-day energy.">
+                      Walk of Life
+                    </HoverCaption>
+                  </em>{' '}
+                  on
+                  the album <em>Brothers in Arms</em>. Their world tour includes major Sydney
+                  performances.
                 </span>
               </li>
               <li>
                 <strong>1986</strong>
                 <span>
-                  <em>Top Gun</em> arrives. “Take My Breath Away” becomes the year’s
+                  <em>Top Gun</em> arrives. “
+                  <HoverCaption caption="1986 · Berlin · The defining love theme of the year.">
+                    Take My Breath Away
+                  </HoverCaption>
+                  ” becomes the year’s
                   defining love song.
                 </span>
               </li>
@@ -414,24 +485,34 @@ function App() {
             <ul>
               <li>
                 <strong>1981</strong>
-                <span>Phil Collins · <em>In the Air Tonight</em></span>
+                <span>
+                  Phil Collins ·{' '}
+                  <em>
+                    <HoverCaption caption="1981 · Phil Collins · Atmospheric, coastal, late-evening tone.">
+                      In the Air Tonight
+                    </HoverCaption>
+                  </em>
+                </span>
               </li>
               <li>
                 <strong>1982</strong>
-                <span>Joe Cocker &amp; Jennifer Warnes · <em>Up Where We Belong</em></span>
+                <span>
+                  Joe Cocker &amp; Jennifer Warnes ·{' '}
+                  <em>
+                    <HoverCaption caption="1982 · Joe Cocker & Jennifer Warnes · Romantic, cinematic, uplifting.">
+                      Up Where We Belong
+                    </HoverCaption>
+                  </em>
+                </span>
               </li>
               <li>
                 <strong>1986</strong>
                 <span>
                   Berlin ·{' '}
                   <em>
-                    <span
-                      className="hover-caption"
-                      data-caption="1986 · Berlin · Take My Breath Away: the defining love theme of the year, echoing the soft coastal light of Sydney’s eastern suburbs."
-                      tabIndex={0}
-                    >
+                    <HoverCaption caption="1986 · Berlin · The defining love theme of the year.">
                       Take My Breath Away
-                    </span>
+                    </HoverCaption>
                   </em>
                 </span>
               </li>
@@ -488,11 +569,11 @@ function App() {
               </figure>
               <figure className="collector-story-image">
                 <img
-                  src="https://res.cloudinary.com/dwpvbtoad/image/upload/v1781853024/IMG_7972_hx5f7w.jpg"
-                  alt="Archival view showing the Elephant appliqué and structured A-line silhouette"
+                  src="https://res.cloudinary.com/dwpvbtoad/image/upload/v1782078948/kept-memory-collage2_xffqjb.png"
+                  alt="Kept Memory collage celebrating the cerulean and wildlife motif collection"
                   loading="lazy"
                 />
-                <figcaption>Motif study · The Elephant and the Lion in motion</figcaption>
+                <figcaption>Kept Memory · The wildlife motif story</figcaption>
               </figure>
             </div>
             <div className="collector-gallery-caption" id="elephant-gallery-caption">
@@ -603,6 +684,14 @@ function App() {
                   Moriarty Colour to advance contemporary colour education. Her dual legacy
                   as a pioneering designer and committed colourist gives the work its rare depth.
                 </p>
+                <figure className="motif-thumbnail">
+                  <img
+                    src="https://res.cloudinary.com/dwpvbtoad/image/upload/v1781853024/IMG_7972_hx5f7w.jpg"
+                    alt="Small archival glimpse of the Lion motif outfit"
+                    loading="lazy"
+                  />
+                  <figcaption>Lion motif · An archival glimpse</figcaption>
+                </figure>
               </aside>
             </div>
           </article>
