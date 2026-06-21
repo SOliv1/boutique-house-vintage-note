@@ -286,6 +286,97 @@ h3 {
   background: #edf3ef;
 }
 
+.wardrobe-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  overflow: hidden;
+  border: 1px solid rgba(33, 28, 26, 0.14);
+  background: #fffaf2;
+}
+
+.wardrobe-feature-gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+  min-height: 620px;
+  background: #d7d5c6;
+}
+
+.wardrobe-feature-image {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.wardrobe-feature-image + .wardrobe-feature-image {
+  border-left: 1px solid rgba(255, 250, 242, 0.72);
+}
+
+.wardrobe-feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.88);
+}
+
+.wardrobe-feature-image--main img {
+  object-position: center;
+}
+
+.wardrobe-feature-image figcaption {
+  position: absolute;
+  right: 0.8rem;
+  bottom: 0.8rem;
+  left: 0.8rem;
+  padding: 0.55rem 0.7rem;
+  background: rgba(33, 28, 26, 0.72);
+  color: #fffaf2;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.wardrobe-feature-copy {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.wardrobe-feature-copy h3 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.wardrobe-feature-lede {
+  margin: 1.4rem 0 0;
+  color: #213f3a;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.35rem, 2.3vw, 1.8rem);
+  line-height: 1.2;
+}
+
+.wardrobe-feature-story {
+  margin-top: 1rem;
+  color: #4e4741;
+}
+
+.wardrobe-feature-story p {
+  margin: 0 0 0.85rem;
+}
+
+.wardrobe-feature-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(33, 28, 26, 0.12);
+  color: #213f3a;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .wardrobe-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -437,8 +528,13 @@ h3 {
 
   .hero-section,
   .split-section,
-  .section-heading-wide {
+  .section-heading-wide,
+  .wardrobe-feature {
     grid-template-columns: 1fr;
+  }
+
+  .wardrobe-feature-gallery {
+    min-height: 520px;
   }
 
   .hero-section {
@@ -472,5 +568,24 @@ h3 {
 
   .wardrobe-grid {
     grid-template-columns: 1fr;
+  }
+
+  .wardrobe-feature-gallery {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .wardrobe-feature-image {
+    aspect-ratio: 4 / 5;
+  }
+
+  .wardrobe-feature-image + .wardrobe-feature-image {
+    border-top: 1px solid rgba(255, 250, 242, 0.72);
+    border-left: 0;
+  }
+
+  .wardrobe-feature-footer {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }

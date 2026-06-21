@@ -1,4 +1,6 @@
 import heroImg from './assets/hero.png'
+import brightWhiteShortsGuernsey from './assets/wardrobe/bright-white-shorts-guernsey.png'
+import brightWhiteShortsStudio from './assets/wardrobe/bright-white-shorts-studio.png'
 import './App.css'
 
 type Note = {
@@ -121,7 +123,7 @@ const wardrobeItems: WardrobeItem[] = [
     description:
       'Relaxed tailoring with a soft vintage line: useful for slow mornings, city errands, and collected wardrobes.',
     price: 'Archive note',
-    originalUrl: 'https://boutique-house-production-751b.up.railway.app/products/?q=linen',
+    originalUrl: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781876234/boutique_pair_2_lse1sd.png',
   },
   {
     title: 'Minimal Knit Edit',
@@ -129,7 +131,7 @@ const wardrobeItems: WardrobeItem[] = [
     description:
       'Quiet knitwear notes in neutral texture, made for layering with denim, wool, and old leather.',
     price: 'Archive note',
-    originalUrl: 'https://boutique-house-production-751b.up.railway.app/products/?q=knit',
+    originalUrl: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781876870/neutrals-knit-vintage_mfypob.jpg',
   },
   {
     title: 'Worn Denim Study',
@@ -137,7 +139,7 @@ const wardrobeItems: WardrobeItem[] = [
     description:
       'A note on faded blues, softened seams, and denim that feels better after years of ordinary wear.',
     price: 'Archive note',
-    originalUrl: 'https://boutique-house-production-751b.up.railway.app/products/?q=jeans',
+    originalUrl: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781877150/worn-denim-study_jxa1n1.jpg',
   },
   {
     title: 'Cotton Shirt Fragment',
@@ -145,7 +147,7 @@ const wardrobeItems: WardrobeItem[] = [
     description:
       'Crisp cotton, pearl buttons, sleeve folds, and the kind of shirt that makes a wardrobe feel edited.',
     price: 'Archive note',
-    originalUrl: 'https://boutique-house-production-751b.up.railway.app/products/?q=shirt',
+    originalUrl: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781879429/Cotton-voile-fragment_xwgec7.png',
   },
 ]
 
@@ -242,6 +244,55 @@ function App() {
               quiet styling ideas, kept separate from the main Boutique House shop.
             </p>
           </div>
+          <article className="wardrobe-feature" aria-labelledby="bright-white-shorts-title">
+            <div className="wardrobe-feature-gallery">
+              <figure className="wardrobe-feature-image wardrobe-feature-image--main">
+                <img
+                  src={brightWhiteShortsGuernsey}
+                  alt="Bright-white structured cotton shorts worn on the Guernsey coast"
+                />
+                <figcaption>Guernsey, 1985/86</figcaption>
+              </figure>
+              <figure className="wardrobe-feature-image">
+                <img
+                  src={brightWhiteShortsStudio}
+                  alt="Studio view showing the tailored pleats and crisp line of the white shorts"
+                />
+                <figcaption>Structured cotton, naturally crisp</figcaption>
+              </figure>
+            </div>
+            <div className="wardrobe-feature-copy">
+              <p className="eyebrow">Vintage Notes · Guernsey · 1985/86</p>
+              <h3 id="bright-white-shorts-title">Bright-White Structured Shorts</h3>
+              <p className="wardrobe-feature-lede">
+                Bright-white structured cotton shorts, circa 1985/86. Naturally crisp
+                with the option to starch for a sharper Sydney–Paddington line.
+              </p>
+              <div className="wardrobe-feature-story">
+                <p>
+                  In the sunlit streets of Guernsey and the breezy coastal towns, these
+                  bright-white cotton shorts were more than clothing: they were a statement
+                  of understated style and practical elegance. Dense, structured cotton
+                  held its shape naturally, while a light starch could sharpen the line
+                  without overpowering its soft, breathable comfort.
+                </p>
+                <p>
+                  Worn with a simple tee or tucked shirt, they embodied the relaxed yet
+                  refined spirit of the mid-eighties. Their clean silhouette felt equally
+                  at home by the sea or among the Sydney–Paddington lanes.
+                </p>
+                <p>
+                  Their charm is in that versatility: polished when starched, easy when
+                  left soft. A quiet reminder of a time when fashion balanced function
+                  with form, and every detail mattered.
+                </p>
+              </div>
+              <footer className="wardrobe-feature-footer">
+                <strong>Archive note</strong>
+                <span>Dense cotton · starch-optional</span>
+              </footer>
+            </div>
+          </article>
           <div className="wardrobe-grid">
             {wardrobeItems.map((item) => (
               <article
