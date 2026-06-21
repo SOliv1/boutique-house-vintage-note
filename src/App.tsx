@@ -328,6 +328,121 @@ function App() {
               <blockquote>Structured bright-white shorts, 1985/86. Clean, crisp, starch-optional.</blockquote>
             </div>
           </article>
+          <div className="wardrobe-memory-group">
+          <section className="vintage-memory" aria-labelledby="double-bay-title">
+            <div className="vintage-memory-heading">
+              <p className="eyebrow">Wardrobe memory · Sydney</p>
+              <h2 id="double-bay-title">Double Bay 1986</h2>
+            </div>
+            <div className="vintage-memory-copy">
+              <p>
+                <em>Evening settled over Sydney like silk.</em>
+                <br />
+                The harbour shimmered below the boutique windows, yachts drifting in the
+                violet dusk. I remember standing there—cotton-voile blouse tied softly at
+                the neck, skirt brushing my knees—feeling part of the scene and apart from
+                it, as if the light itself had chosen me.
+              </p>
+              <p>
+                Double Bay was a world of its own then: leafy streets, polished shopfronts,
+                and the hum of conversation between travellers, designers, and dreamers.
+                The boutique was small but radiant—a place where clothes were stories, and
+                each customer carried one home. I wore that ensemble often, proud yet calm,
+                knowing it belonged to the rhythm of the place.
+              </p>
+              <p className="vintage-memory-culture">
+                <strong>1986 · Cultural Atmosphere</strong>
+                <br />
+                <em>Top Gun</em> released its iconic love theme{' '}
+                <strong>“Take My Breath Away”</strong>—a song that drifted through radios and
+                shopfronts that year, matching the soft coastal light of Sydney’s eastern
+                suburbs.
+              </p>
+              <p>
+                <em>The tag now reads</em>{' '}
+                <strong>Property of Sara Oliver · Double Bay 1986</strong>—a quiet signature
+                of a time when Sydney felt cinematic, when the harbour lights mirrored the
+                folds of voile and the promise of evening lingered in every reflection.
+              </p>
+            </div>
+          </section>
+          <div className="memory-sidebars">
+          <section className="cultural-timeline" aria-labelledby="cultural-timeline-title">
+            <p className="eyebrow">Sound · Cinema · Style</p>
+            <h3 id="cultural-timeline-title">1981–1986 · Cultural Timeline</h3>
+            <ul>
+              <li>
+                <strong>1981</strong>
+                <span>
+                  Phil Collins releases <em>In the Air Tonight</em>, defining the decade’s
+                  atmospheric sound.
+                </span>
+              </li>
+              <li>
+                <strong>1982</strong>
+                <span>
+                  <em>An Officer and a Gentleman</em> premieres. “Up Where We Belong”
+                  becomes a global love theme.
+                </span>
+              </li>
+              <li>
+                <strong>1983–1984</strong>
+                <span>
+                  Soft-rock, coastal pop, and cinematic romance dominate radio across
+                  Sydney’s eastern suburbs.
+                </span>
+              </li>
+              <li>
+                <strong>1985</strong>
+                <span>
+                  Bright whites, structured cotton, and clean silhouettes appear in
+                  boutiques from Double Bay to Paddington.
+                </span>
+              </li>
+              <li>
+                <strong>1986</strong>
+                <span>
+                  <em>Top Gun</em> arrives. “Take My Breath Away” becomes the year’s
+                  defining love song.
+                </span>
+              </li>
+            </ul>
+          </section>
+          <aside className="soundtrack-era" aria-labelledby="soundtrack-era-title">
+            <p className="eyebrow">Vintage Notes playlist</p>
+            <h3 id="soundtrack-era-title">Soundtrack of the Era</h3>
+            <ul>
+              <li>
+                <strong>1981</strong>
+                <span>Phil Collins · <em>In the Air Tonight</em></span>
+              </li>
+              <li>
+                <strong>1982</strong>
+                <span>Joe Cocker &amp; Jennifer Warnes · <em>Up Where We Belong</em></span>
+              </li>
+              <li>
+                <strong>1986</strong>
+                <span>
+                  Berlin ·{' '}
+                  <em>
+                    <span
+                      className="hover-caption"
+                      data-caption="1986 · Berlin · Take My Breath Away—the defining love theme of the year, echoing the soft coastal light of Sydney’s eastern suburbs."
+                      tabIndex={0}
+                    >
+                      Take My Breath Away
+                    </span>
+                  </em>
+                </span>
+              </li>
+            </ul>
+            <p className="soundtrack-era-note">
+              These songs shaped the emotional rhythm of Sydney’s eastern suburbs—Double
+              Bay, Paddington, Darling Point—during the years you lived them.
+            </p>
+          </aside>
+          </div>
+          </div>
           <article className="collector-story" aria-labelledby="elephant-skirt-title">
             <header className="collector-story-header">
               <div>
@@ -377,7 +492,7 @@ function App() {
                   alt="Archival view showing the Elephant appliqué and structured A-line silhouette"
                   loading="lazy"
                 />
-                <figcaption>Motif study · The Elephant in motion</figcaption>
+                <figcaption>Motif study · The Elephant and the Lion in motion</figcaption>
               </figure>
             </div>
             <div className="collector-gallery-caption" id="elephant-gallery-caption">

@@ -420,6 +420,220 @@ h3 {
   line-height: 1.25;
 }
 
+.wardrobe-memory-group {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(300px, 0.7fr);
+  gap: 1px;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  background: rgba(33, 28, 26, 0.18);
+}
+
+.vintage-memory {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.55fr) minmax(0, 1.45fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  padding: clamp(2rem, 6vw, 5rem);
+  border: 1px solid rgba(33, 28, 26, 0.14);
+  background:
+    linear-gradient(135deg, rgba(68, 70, 111, 0.94), rgba(31, 65, 74, 0.96));
+  color: #fdf6ea;
+}
+
+.vintage-memory .eyebrow,
+.vintage-memory h2 {
+  color: #fdf6ea;
+}
+
+.vintage-memory-heading {
+  align-self: start;
+}
+
+.vintage-memory-copy {
+  max-width: 760px;
+  font-size: clamp(1rem, 1.8vw, 1.16rem);
+  line-height: 1.75;
+}
+
+.vintage-memory-copy p {
+  margin: 0 0 1.25rem;
+}
+
+.vintage-memory-copy p:last-child {
+  margin-bottom: 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(253, 246, 234, 0.28);
+}
+
+.vintage-memory-copy .vintage-memory-culture {
+  margin-block: 1.75rem;
+  padding: 1.1rem 1.25rem;
+  border-left: 3px solid #fff4cc;
+  background: rgba(253, 246, 234, 0.08);
+}
+
+.vintage-memory-culture strong:first-child {
+  color: #fff4cc;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.vintage-memory-copy em {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.35em;
+}
+
+.vintage-memory-copy strong {
+  color: #fff4cc;
+}
+
+.memory-sidebars {
+  display: grid;
+  align-content: start;
+  gap: 1px;
+  min-width: 0;
+}
+
+.cultural-timeline {
+  padding: clamp(1.5rem, 3.5vw, 2.75rem);
+  background: #172f35;
+  color: #fdf6ea;
+}
+
+.cultural-timeline .eyebrow,
+.cultural-timeline h3 {
+  color: #fdf6ea;
+}
+
+.cultural-timeline h3 {
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+}
+
+.cultural-timeline ul {
+  display: grid;
+  gap: 0;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cultural-timeline li {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(253, 246, 234, 0.18);
+}
+
+.cultural-timeline li strong {
+  color: #fff4cc;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+}
+
+.cultural-timeline li span {
+  line-height: 1.55;
+}
+
+.soundtrack-era {
+  padding: clamp(1.5rem, 3.5vw, 2.75rem);
+  background: #fffaf2;
+  color: #4e4741;
+}
+
+.soundtrack-era h3 {
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+}
+
+.soundtrack-era ul {
+  display: grid;
+  gap: 0;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.soundtrack-era li {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.9rem 0;
+  border-top: 1px solid rgba(33, 28, 26, 0.14);
+}
+
+.soundtrack-era li strong {
+  color: #8c2633;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+}
+
+.soundtrack-era li span {
+  color: #213f3a;
+  line-height: 1.45;
+}
+
+.soundtrack-era-note {
+  margin: 1.25rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(33, 28, 26, 0.14);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.18rem;
+  line-height: 1.35;
+}
+
+.hover-caption {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted #777a9d;
+  color: #625e7c;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.3s ease;
+}
+
+.hover-caption::after {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  z-index: 4;
+  width: max-content;
+  max-width: min(520px, 78vw);
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: rgba(40, 35, 60, 0.85);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  color: #f0f0ff;
+  content: attr(data-caption);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+  opacity: 0;
+  pointer-events: none;
+  text-align: left;
+  transform: translateY(-0.25rem);
+  transition: opacity 160ms ease, transform 160ms ease;
+  visibility: hidden;
+  white-space: nowrap;
+}
+
+.hover-caption:hover,
+.hover-caption:focus-visible {
+  color: #8c2633;
+}
+
+.hover-caption:hover::after,
+.hover-caption:focus-visible::after {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.hover-caption:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid #777a9d;
+  outline-offset: 3px;
+}
+
 .collector-story {
   margin-bottom: clamp(1rem, 3vw, 2rem);
   padding: clamp(1.5rem, 4vw, 3.5rem);
@@ -760,6 +974,8 @@ h3 {
   .section-heading-wide,
   .wardrobe-feature,
   .wardrobe-alternative,
+  .wardrobe-memory-group,
+  .vintage-memory,
   .collector-story-header,
   .collector-story-intro,
   .collector-story-layout {
@@ -822,6 +1038,11 @@ h3 {
 
   .collector-story-gallery {
     grid-template-columns: 1fr;
+  }
+
+  .hover-caption::after {
+    width: min(280px, 76vw);
+    white-space: normal;
   }
 
   .wardrobe-feature-image {
