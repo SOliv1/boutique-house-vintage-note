@@ -290,7 +290,7 @@ function App() {
                   softly natural, this pair moved comfortably between both worlds.
                 </p>
                 <p>
-                  Their charm lies in that versatility—polished without being formal,
+                  Their charm lies in that versatility: polished without being formal,
                   relaxed without losing their shape. A quiet piece of history woven into
                   fabric, carrying the light and life of the mid-eighties wherever it goes.
                 </p>
@@ -315,7 +315,7 @@ function App() {
                 easy, generous line.
               </p>
               <p>
-                Their fabric was simple and assured—not percale, poplin, or drill, but a
+                Their fabric was simple and assured: not percale, poplin, or drill, but a
                 dense cotton with enough body to stand beautifully on its own. A touch of
                 starch could make the silhouette more architectural; without it, the shorts
                 relaxed into the unstudied ease of a tee, a tucked shirt, and bare summer days.
@@ -339,14 +339,14 @@ function App() {
                 <em>Evening settled over Sydney like silk.</em>
                 <br />
                 The harbour shimmered below the boutique windows, yachts drifting in the
-                violet dusk. I remember standing there—cotton-voile blouse tied softly at
-                the neck, skirt brushing my knees—feeling part of the scene and apart from
+                violet dusk. I remember standing there: cotton-voile blouse tied softly at
+                the neck, skirt brushing my knees, feeling part of the scene and apart from
                 it, as if the light itself had chosen me.
               </p>
               <p>
                 Double Bay was a world of its own then: leafy streets, polished shopfronts,
                 and the hum of conversation between travellers, designers, and dreamers.
-                The boutique was small but radiant—a place where clothes were stories, and
+                The boutique was small but radiant: a place where clothes were stories, and
                 each customer carried one home. I wore that ensemble often, proud yet calm,
                 knowing it belonged to the rhythm of the place.
               </p>
@@ -354,13 +354,13 @@ function App() {
                 <strong>1986 · Cultural Atmosphere</strong>
                 <br />
                 <em>Top Gun</em> released its iconic love theme{' '}
-                <strong>“Take My Breath Away”</strong>—a song that drifted through radios and
+                <strong>“Take My Breath Away”</strong>: a song that drifted through radios and
                 shopfronts that year, matching the soft coastal light of Sydney’s eastern
                 suburbs.
               </p>
               <p>
                 <em>The tag now reads</em>{' '}
-                <strong>Property of Sara Oliver · Double Bay 1986</strong>—a quiet signature
+                <strong>Property of Sara Oliver · Double Bay 1986</strong>: a quiet signature
                 of a time when Sydney felt cinematic, when the harbour lights mirrored the
                 folds of voile and the promise of evening lingered in every reflection.
               </p>
@@ -427,7 +427,7 @@ function App() {
                   <em>
                     <span
                       className="hover-caption"
-                      data-caption="1986 · Berlin · Take My Breath Away—the defining love theme of the year, echoing the soft coastal light of Sydney’s eastern suburbs."
+                      data-caption="1986 · Berlin · Take My Breath Away: the defining love theme of the year, echoing the soft coastal light of Sydney’s eastern suburbs."
                       tabIndex={0}
                     >
                       Take My Breath Away
@@ -437,8 +437,8 @@ function App() {
               </li>
             </ul>
             <p className="soundtrack-era-note">
-              These songs shaped the emotional rhythm of Sydney’s eastern suburbs—Double
-              Bay, Paddington, Darling Point—during the years you lived them.
+              These songs shaped the emotional rhythm of Sydney’s eastern suburbs: Double
+              Bay, Paddington, and Darling Point, during the years you lived them.
             </p>
           </aside>
           </div>
@@ -524,7 +524,7 @@ function App() {
             <div className="collector-story-intro">
               <p>Smart. Vibrant. Unforgettable.</p>
               <span>
-                A limited vintage recreation—and the memory of a small, unofficial
+                A limited vintage recreation: the memory of a small, unofficial
                 club marked by colour, character, and friendship.
               </span>
             </div>
@@ -534,7 +534,7 @@ function App() {
                 <p>
                   This ensemble began its life in Melbourne in the late 1970s, created
                   during a short, brilliant run of collectible wildlife skirts. Each
-                  featured a different animal in bold appliqué—walking, striding, or
+                  featured a different animal in bold appliqué: walking, striding, or
                   turning across the fabric as if caught mid-story. Produced in limited
                   numbers and sold quietly, they were worn proudly by a certain circle
                   of girls who understood what they were.
@@ -544,8 +544,8 @@ function App() {
                   We were school friends, each with our own motif. The Elephant was mine:
                   a soft grey appliqué stitched onto a stiff cotton A-line skirt, its form
                   moving from side to front as you walked. Others wore the Tiger, the
-                  Giraffe, and a handful of designs I can no longer fully recall—only that
-                  they were vivid, confident, and instantly recognisable. It became our
+                  Giraffe, and a handful of designs I can no longer fully recall. I remember
+                  only that they were vivid, confident, and instantly recognisable. It became our
                   small, unofficial club, and there was a thrill in wearing something no
                   one else had.
                 </p>
@@ -553,7 +553,7 @@ function App() {
                   The top was always cerulean. Soft cotton, short sleeves, and a gentle,
                   flattering shape balanced the structure of the skirt. It was not meant
                   to compete; it framed the artwork. Together the pieces created a
-                  silhouette that felt youthful yet composed—summer’s best wear:
+                  silhouette that felt youthful yet composed. It was summer’s best wear:
                   light-catching, easy, and memorable.
                 </p>
                 <p>
@@ -570,7 +570,7 @@ function App() {
                 </p>
                 <p>
                   Today, the set stands as a Limited Vintage Recreation: a rare survivor
-                  preserved with care for The Wardrobe—Collector’s Edition. It remembers
+                  preserved with care for The Wardrobe: Collector’s Edition. It remembers
                   a designer who created joy in cotton and thread, and a moment when
                   clothing felt like a shared secret between friends.
                 </p>
@@ -600,8 +600,8 @@ function App() {
                 <p>
                   Acton always considered herself an artist first. In the 1980s she stepped
                   away from commercial fashion and returned to painting, later co-founding
-                  Moriarty Colour to advance contemporary colour education. That dual legacy—
-                  pioneering designer and committed colourist—gives her work its rare depth.
+                  Moriarty Colour to advance contemporary colour education. Her dual legacy
+                  as a pioneering designer and committed colourist gives the work its rare depth.
                 </p>
               </aside>
             </div>
