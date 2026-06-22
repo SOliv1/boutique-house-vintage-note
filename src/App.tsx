@@ -64,6 +64,18 @@ const heroSlides = [
   },
 ]
 
+const rightColumnSlides = [
+  ...heroSlides.slice(0, 6),
+  {
+    src: '/attachments/wtYrptdkjxh2NKK6UYbzz.jpeg',
+    alt: 'Orb 1',
+  },
+  {
+    src: '/attachments/uRSH3pGuf4kXqdHPdkgWi.jpeg',
+    alt: 'Orb 2',
+  },
+]
+
 function HoverCaption({ children, caption }: HoverCaptionProps) {
   return (
     <span className="hover-caption" data-caption={caption} tabIndex={0}>
@@ -565,6 +577,17 @@ function App() {
               Bay, Paddington, and Darling Point, during the years you lived them.
             </p>
           </aside>
+          <section
+            className="vintage-carousel-right"
+            aria-label="Boutique, fabric, and orb image carousel"
+            tabIndex={0}
+          >
+            <div className="carousel-track-vertical">
+              {rightColumnSlides.map((slide) => (
+                <img src={slide.src} alt={slide.alt} loading="lazy" key={slide.src} />
+              ))}
+            </div>
+          </section>
           </div>
           </div>
           <article className="collector-story" aria-labelledby="elephant-skirt-title">
@@ -798,3 +821,4 @@ function App() {
 }
 
 export default App
+
