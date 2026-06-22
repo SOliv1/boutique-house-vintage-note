@@ -66,14 +66,13 @@ const heroSlides = [
 
 const rightColumnSlides = [
   ...heroSlides.slice(0, 6),
-  {
-    src: '/attachments/wtYrptdkjxh2NKK6UYbzz.jpeg',
-    alt: 'Orb 1',
-  },
-  {
-    src: '/attachments/uRSH3pGuf4kXqdHPdkgWi.jpeg',
-    alt: 'Orb 2',
-  },
+]
+
+const seasonalOrbs = [
+  { title: 'Vintage Notes Orb', accent: 'vintage-notes' },
+  { title: 'Morning Vintage Orb', accent: 'morning' },
+  { title: 'Summer Vintage Orb', accent: 'summer' },
+  { title: 'Evening Vintage Orb', accent: 'evening' },
 ]
 
 function HoverCaption({ children, caption }: HoverCaptionProps) {
@@ -585,6 +584,16 @@ function App() {
             <div className="carousel-track-vertical">
               {rightColumnSlides.map((slide) => (
                 <img src={slide.src} alt={slide.alt} loading="lazy" key={slide.src} />
+              ))}
+              {seasonalOrbs.map((orb) => (
+                <figure
+                  className={`carousel-orb carousel-orb--${orb.accent}`}
+                  aria-label={orb.title}
+                  key={orb.accent}
+                >
+                  <span aria-hidden="true" />
+                  <figcaption>{orb.title}</figcaption>
+                </figure>
               ))}
             </div>
           </section>
