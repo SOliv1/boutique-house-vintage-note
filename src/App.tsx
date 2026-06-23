@@ -1,6 +1,8 @@
 import heroImg from './assets/hero.png'
 import brightWhiteShortsGuernsey from './assets/wardrobe/bright-white-shorts-guernsey.png'
 import brightWhiteShortsStudio from './assets/wardrobe/bright-white-shorts-studio.png'
+import windowTreesDress from './assets/window-trees/window-trees-dress.png'
+import windowTreesGarden from './assets/window-trees/window-trees-garden.jpeg'
 import './App.css'
 
 type Note = {
@@ -286,6 +288,122 @@ function App() {
               </article>
             ))}
           </div>
+          <article
+            id="window-trees-collection"
+            className="window-trees-story"
+            aria-labelledby="window-trees-title"
+          >
+            <header className="window-trees-header">
+              <div>
+                <p className="eyebrow">Timeless Dressing · Archive story</p>
+                <h3 id="window-trees-title">The Window Trees Collection</h3>
+                <p className="window-trees-subtitle">A Boutique House Original Textile Story</p>
+              </div>
+              <dl className="window-trees-meta">
+                <div>
+                  <dt>Season</dt>
+                  <dd>Spring / Summer</dd>
+                </div>
+                <div>
+                  <dt>Mood</dt>
+                  <dd>Luminous · serene · architectural · rooted in nature</dd>
+                </div>
+              </dl>
+            </header>
+
+            <div className="window-trees-gallery">
+              <figure className="window-trees-image window-trees-image--dress">
+                <img
+                  src={windowTreesDress}
+                  alt="Luminous green linen-cotton dress with embroidered leaves, jet shimmer heels, and striped garden hat"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>The Window Trees dress · Spring / Summer</figcaption>
+              </figure>
+              <figure className="window-trees-image window-trees-image--garden">
+                <img
+                  src={windowTreesGarden}
+                  alt="The garden trees and morning sky that inspired the collection"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>The view from the window · trees in morning light</figcaption>
+              </figure>
+            </div>
+
+            <div className="window-trees-intro">
+              <p>The trees in my garden, translated into textile architecture.</p>
+              <span>
+                Crafted in a linen-cotton blend for crispness and breathability, the dress
+                moves from pale, luminous green at the neckline to vibrant green at the hem.
+              </span>
+            </div>
+
+            <div className="window-trees-details">
+              <section aria-labelledby="window-trees-details-title">
+                <p className="eyebrow">Garment study</p>
+                <h4 id="window-trees-details-title">Structure in leaf and light</h4>
+                <ul>
+                  <li>
+                    <strong>V-neckline</strong>
+                    <span>Tailored and architectural, echoing the clarity of morning light.</span>
+                  </li>
+                  <li>
+                    <strong>Three-quarter sleeves</strong>
+                    <span>Lightly starched, with embroidered leaf motifs at the cuffs.</span>
+                  </li>
+                  <li>
+                    <strong>Right-front slit</strong>
+                    <span>Edged with tiny leaf motifs, adding movement and subtle rhythm.</span>
+                  </li>
+                  <li>
+                    <strong>Back structured pleat</strong>
+                    <span>Sculptural and vertical, reminiscent of tree trunks.</span>
+                  </li>
+                </ul>
+              </section>
+              <aside className="window-trees-accents" aria-labelledby="window-trees-accents-title">
+                <p className="eyebrow">Finishing notes</p>
+                <h4 id="window-trees-accents-title">Garden-party signatures</h4>
+                <p>
+                  <strong>Jet Shimmer pointed kitten heels</strong>: black with a subtle
+                  sparkle, completing the ensemble.
+                </p>
+                <p>
+                  <strong>Signature straw hat</strong>: wide-brimmed and finely striped in
+                  duo greens, with a shimmer dark-green band tilted over one eye.
+                </p>
+              </aside>
+            </div>
+
+            <div className="window-trees-closing">
+              <section aria-labelledby="window-trees-origin-title">
+                <p className="eyebrow">Concept origin</p>
+                <h4 id="window-trees-origin-title">The view becomes the cloth</h4>
+                <p>
+                  Morning light, tree silhouettes, and the quiet rhythm of nature become a
+                  study in line, movement, and colour. The collection embodies Boutique
+                  House’s ethos: peace, harmony, and timeless dressing rooted in place.
+                </p>
+              </section>
+              <section aria-labelledby="window-trees-styling-title">
+                <p className="eyebrow">Styling notes</p>
+                <h4 id="window-trees-styling-title">From picnic to soirée</h4>
+                <ul>
+                  <li>Ideal for garden parties, countryside weddings, or summer soirées.</li>
+                  <li>Dress down with flat sandals and a woven tote for daytime picnics.</li>
+                  <li>Pair with the Dark Luminous Wrap for evening elegance.</li>
+                </ul>
+              </section>
+            </div>
+
+            <blockquote className="window-trees-reflection">
+              <p className="eyebrow">Designer’s reflection</p>
+              “I wanted to capture the feeling of standing at my window, the trees glowing
+              in morning light, and translate that serenity into a dress that moves with the day.”
+            </blockquote>
+          </article>
         </section>
 
         <section id="finds" className="split-section" aria-labelledby="finds-title">
@@ -442,11 +560,18 @@ function App() {
                 <strong>1981</strong>
                 <span>
                   Phil Collins releases{' '}
-                  <em>
-                    <HoverCaption caption="1981 · Phil Collins · Atmospheric, coastal, late-evening tone.">
-                      In the Air Tonight
-                    </HoverCaption>
-                  </em>
+                  <a
+                    className="music-link"
+                    href="https://youtu.be/YkADj0TPrJA?si=eXaZVVSjsATWqrcC"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <em>
+                      <HoverCaption caption="1981 · Phil Collins · Atmospheric, coastal, late-evening tone.">
+                        In the Air Tonight
+                      </HoverCaption>
+                    </em>
+                  </a>
                   , shaping the decade’s
                   atmospheric sound.
                 </span>
@@ -455,9 +580,16 @@ function App() {
                 <strong>1982</strong>
                 <span>
                   <em>An Officer and a Gentleman</em> premieres. “
-                  <HoverCaption caption="1982 · Joe Cocker & Jennifer Warnes · Romantic, cinematic, uplifting.">
-                    Up Where We Belong
-                  </HoverCaption>
+                  <a
+                    className="music-link"
+                    href="https://music.youtube.com/watch?v=bjrOcrisGyI&si=-KucT-EKCEp54cX9"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <HoverCaption caption="1982 · Joe Cocker & Jennifer Warnes · Romantic, cinematic, uplifting.">
+                      Up Where We Belong
+                    </HoverCaption>
+                  </a>
                   ” becomes a global romantic theme.
                 </span>
               </li>
@@ -465,11 +597,18 @@ function App() {
                 <strong>1983</strong>
                 <span>
                   The Police release{' '}
-                  <em>
-                    <HoverCaption caption="1983 · The Police · Iconic, steady, instantly recognisable.">
-                      Every Breath You Take
-                    </HoverCaption>
-                  </em>
+                  <a
+                    className="music-link"
+                    href="https://music.youtube.com/watch?v=-SaUrDhp034&si=E4Zj9_g3OqFCAUw0"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <em>
+                      <HoverCaption caption="1983 · The Police · Iconic, steady, instantly recognisable.">
+                        Every Breath You Take
+                      </HoverCaption>
+                    </em>
+                  </a>
                   , one of the most
                   recognisable songs of the era.
                 </span>
@@ -478,57 +617,119 @@ function App() {
                 <strong>1984</strong>
                 <span>
                   Sade’s{' '}
-                  <em>
-                    <HoverCaption caption="1984 · Sade · Elegant, cool, sophisticated.">
-                      Smooth Operator
-                    </HoverCaption>
-                  </em>{' '}
-                  defines the cool, elegant sound of
-                  mid-eighties evenings.
+                  <a
+                    className="music-link"
+                    href="https://youtu.be/4TYv2PhG89A?si=jUb7uSpGOHUk8WX7"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <em>
+                      <HoverCaption caption="1984 · Sade · Elegant, cool, sophisticated.">
+                        Smooth Operator
+                      </HoverCaption>
+                    </em>
+                  </a>{' '}
+                  defines the cool, elegant sound of mid-eighties evenings. I had just
+                  moved to Sydney from Adelaide and was working in a smart boutique in
+                  Double Bay when I first heard this.
                 </span>
               </li>
               <li>
                 <strong>1985</strong>
                 <span>
                   Whitney Houston releases{' '}
-                  <em>
-                    <HoverCaption caption="1985 · Whitney Houston · Soft, romantic, late-night Sydney.">
-                      Saving All My Love for You
-                    </HoverCaption>
-                  </em>
-                  , adding a
-                  soft-romantic tone to the year.
+                  <a
+                    className="music-link"
+                    href="https://youtu.be/7_S2lTmIecI?si=DkH2tUtqfSJ1_UJb"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <em>
+                      <HoverCaption caption="1985 · Whitney Houston · Soft, romantic, late-night Sydney.">
+                        Saving All My Love for You
+                      </HoverCaption>
+                    </em>
+                  </a>
+                  , adding a soft-romantic tone to the year. I was working for Cartier
+                  and Rothmans PR when I first heard this, driving all over Sydney on
+                  promotion tours.
                 </span>
               </li>
               <li>
                 <strong>1985</strong>
                 <span>
                   Dire Straits release{' '}
-                  <em>
-                    <HoverCaption caption="1985 · Dire Straits · Global hit, MTV-defining.">
-                      Money for Nothing
-                    </HoverCaption>
-                  </em>{' '}
+                  <a
+                    className="music-link"
+                    href="https://youtu.be/IGSykzjjS80?si=qNIBuNmsqUZ9Q5Pv"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <em>
+                      <HoverCaption caption="1985 · Dire Straits · Global hit, MTV-defining. We were right there, live from Sydney Arena.">
+                        Money for Nothing
+                      </HoverCaption>
+                    </em>
+                  </a>{' '}
                   and{' '}
-                  <em>
-                    <HoverCaption caption="1985 · Dire Straits · Bright, upbeat, boutique-day energy.">
-                      Walk of Life
-                    </HoverCaption>
-                  </em>{' '}
-                  on
-                  the album <em>Brothers in Arms</em>. Their world tour includes major Sydney
-                  performances.
+                  <a
+                    className="music-link"
+                    href="https://youtu.be/Gy3YiqLmPD8?si=fvAU00PgeN1ZQxzg"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <em>
+                      <HoverCaption caption="1985 · Dire Straits · Live at the Sydney Arena. We were there. Bright, upbeat, boutique-day energy.">
+                        Walk of Life
+                      </HoverCaption>
+                    </em>
+                  </a>{' '}
+                  on the album <em>Brothers in Arms</em>. We were right there, live
+                  from Sydney Arena, with{' '}
+                  <a
+                    className="music-link"
+                    href="https://youtu.be/8xsqrghU3sM?si=01uhu-lYTJke8cPE"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <em>
+                      <HoverCaption caption="Dire Straits live · Sydney Arena memory · guitar-bright and unforgettable.">
+                        Sultans of Swing
+                      </HoverCaption>
+                    </em>
+                  </a>{' '}
+                  folded into that unforgettable concert memory.
                 </span>
               </li>
               <li>
                 <strong>1986</strong>
                 <span>
                   <em>Top Gun</em> arrives. “
-                  <HoverCaption caption="1986 · Berlin · The defining love theme of the year.">
-                    Take My Breath Away
-                  </HoverCaption>
+                  <a
+                    className="music-link"
+                    href="https://youtube.com/shorts/DWTXPI-1x7A?si=VK6i0t8dShmg3TUW"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <HoverCaption caption="1986 · Berlin · The defining love theme of the year.">
+                      Take My Breath Away
+                    </HoverCaption>
+                  </a>
                   ” becomes the year’s
                   defining love song.
+                </span>
+              </li>
+              <li>
+                <strong>1986 / 1987</strong>
+                <span>
+                  Orchestral Manoeuvres in the Dark release{' '}
+                  <em>
+                    <HoverCaption caption="Global release September 1986 · Reached Sydney as a hit in late 1986 / 1987 · Truly atmospheric music.">
+                      Forever Live and Die
+                    </HoverCaption>
+                  </em>
+                  , globally released in September 1986 and reaching Sydney, Australia
+                  as a hit in late 1986 / 1987, truly atmospheric music.
                 </span>
               </li>
             </ul>
@@ -541,31 +742,63 @@ function App() {
                 <strong>1981</strong>
                 <span>
                   Phil Collins ·{' '}
-                  <em>
-                    <HoverCaption caption="1981 · Phil Collins · Atmospheric, coastal, late-evening tone.">
-                      In the Air Tonight
-                    </HoverCaption>
-                  </em>
+                  <a
+                    className="music-link"
+                    href="https://youtu.be/YkADj0TPrJA?si=eXaZVVSjsATWqrcC"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <em>
+                      <HoverCaption caption="1981 · Phil Collins · Atmospheric, coastal, late-evening tone.">
+                        In the Air Tonight
+                      </HoverCaption>
+                    </em>
+                  </a>
                 </span>
               </li>
               <li>
                 <strong>1982</strong>
                 <span>
                   Joe Cocker &amp; Jennifer Warnes ·{' '}
-                  <em>
-                    <HoverCaption caption="1982 · Joe Cocker & Jennifer Warnes · Romantic, cinematic, uplifting.">
-                      Up Where We Belong
-                    </HoverCaption>
-                  </em>
+                  <a
+                    className="music-link"
+                    href="https://music.youtube.com/watch?v=bjrOcrisGyI&si=-KucT-EKCEp54cX9"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <em>
+                      <HoverCaption caption="1982 · Joe Cocker & Jennifer Warnes · Romantic, cinematic, uplifting.">
+                        Up Where We Belong
+                      </HoverCaption>
+                    </em>
+                  </a>
                 </span>
               </li>
               <li>
                 <strong>1986</strong>
                 <span>
                   Berlin ·{' '}
+                  <a
+                    className="music-link"
+                    href="https://youtube.com/shorts/DWTXPI-1x7A?si=VK6i0t8dShmg3TUW"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <em>
+                      <HoverCaption caption="1986 · Berlin · The defining love theme of the year.">
+                        Take My Breath Away
+                      </HoverCaption>
+                    </em>
+                  </a>
+                </span>
+              </li>
+              <li>
+                <strong>1986 / 1987</strong>
+                <span>
+                  Orchestral Manoeuvres in the Dark ·{' '}
                   <em>
-                    <HoverCaption caption="1986 · Berlin · The defining love theme of the year.">
-                      Take My Breath Away
+                    <HoverCaption caption="Global release September 1986 · Sydney hit in late 1986 / 1987 · Truly atmospheric.">
+                      Forever Live and Die
                     </HoverCaption>
                   </em>
                 </span>
@@ -684,6 +917,74 @@ function App() {
                 club marked by colour, character, and friendship.
               </span>
             </div>
+
+            <section className="collector-era-soundtrack" aria-labelledby="collector-era-soundtrack-title">
+              <div>
+                <p className="eyebrow">Late-seventies atmosphere</p>
+                <h4 id="collector-era-soundtrack-title">The Sound Around The Motif Dress</h4>
+              </div>
+              <ul>
+                <li>
+                  <strong>1977-78</strong>
+                  <span>
+                    Bread ·{' '}
+                    <a
+                      className="music-link"
+                      href="https://music.youtube.com/watch?v=OudI2JPhEqQ&si=RDxpLOsWMTGRLQWO"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <em>
+                        <HoverCaption caption="A soft romantic classic, remembered here as part of the late-seventies mood.">
+                          Make It with You
+                        </HoverCaption>
+                      </em>
+                    </a>
+                  </span>
+                </li>
+                <li>
+                  <strong>1977-78</strong>
+                  <span>
+                    America ·{' '}
+                    <a
+                      className="music-link"
+                      href="https://youtu.be/na47wMFfQCo?si=vSU4L7E-l79SNUMR"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <em>
+                        <HoverCaption caption="Open-road folk rock, easy and sunlit, carrying the feeling of an earlier seventies world into memory.">
+                          A Horse with No Name
+                        </HoverCaption>
+                      </em>
+                    </a>
+                  </span>
+                </li>
+                <li>
+                  <strong>1978-79</strong>
+                  <span>
+                    Supertramp ·{' '}
+                    <a
+                      className="music-link"
+                      href="https://music.youtube.com/watch?v=Zmc_a-qoBMw&si=73s0xxoIZ4jktYVT"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <em>
+                        <HoverCaption caption="Late-seventies brightness with a thoughtful, questioning edge.">
+                          The Logical Song
+                        </HoverCaption>
+                      </em>
+                    </a>
+                  </span>
+                </li>
+              </ul>
+              <p>
+                These songs sit beside the Prue Acton motif dress as an early soundtrack:
+                soft radio memories, school-days brightness, and the easy atmosphere of
+                the era.
+              </p>
+            </section>
 
             <div className="collector-story-layout">
               <div className="collector-story-copy">
