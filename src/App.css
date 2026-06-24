@@ -45,8 +45,8 @@
   align-items: center;
   justify-content: flex-end;
   flex-wrap: wrap;
-  gap: clamp(0.75rem, 3vw, 2rem);
-  font-size: 0.92rem;
+  gap: clamp(0.65rem, 2vw, 1.5rem);
+  font-size: 0.86rem;
 }
 
 .nav-links a,
@@ -58,6 +58,12 @@
 .nav-links a:hover,
 .site-footer a:hover {
   color: #8c2633;
+}
+
+.mobile-menu-toggle,
+.mobile-menu-heading,
+.mobile-menu-backdrop {
+  display: none;
 }
 
 .hero-section {
@@ -353,8 +359,298 @@ h3 {
   background: #fbf7ef;
 }
 
+.contact-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: end;
+  padding: clamp(3rem, 8vw, 7rem) clamp(1rem, 4vw, 4rem);
+  background: #e5ebe6;
+}
+
+.contact-section-copy {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.contact-section-copy p {
+  max-width: 620px;
+  margin: 0;
+  color: #4e5655;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+  line-height: 1.3;
+}
+
+.contact-email {
+  color: #234c56;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  text-underline-offset: 0.25em;
+}
+
+#notes,
+#blue-silk-cotton-work-dress,
+#the-wardrobe,
+#wardrobe-stories,
+#journal,
+#contact {
+  scroll-margin-top: 110px;
+}
+
 .wardrobe-section {
   background: #edf3ef;
+}
+
+.window-trees-wrap {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+  margin-top: clamp(1.5rem, 4vw, 3rem);
+  overflow: hidden;
+  border: 1px solid rgba(33, 28, 26, 0.16);
+  background: #17342f;
+  color: #f8f3e8;
+}
+
+.window-trees-wrap-image {
+  position: relative;
+  min-height: 440px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.window-trees-wrap-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.window-trees-wrap-image figcaption {
+  position: absolute;
+  right: 0.8rem;
+  bottom: 0.8rem;
+  left: 0.8rem;
+  padding: 0.6rem 0.75rem;
+  background: rgba(14, 35, 31, 0.78);
+  color: #fffaf2;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.window-trees-wrap-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.5rem, 5vw, 4rem);
+}
+
+.window-trees-wrap-copy .eyebrow {
+  color: #c8d99d;
+}
+
+.window-trees-wrap-copy h4 {
+  margin: 0;
+  color: #fffaf2;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+  font-weight: 500;
+  line-height: 0.96;
+}
+
+.window-trees-wrap-copy p:not(.eyebrow) {
+  margin: 1.4rem 0 0;
+  color: #eef1df;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  line-height: 1.25;
+}
+
+.window-trees-wrap-copy span {
+  display: block;
+  margin-top: 1.1rem;
+  color: #c5d2c2;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.reimagined-story {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
+  margin-bottom: clamp(1.5rem, 4vw, 3rem);
+  overflow: hidden;
+  border: 1px solid rgba(33, 28, 26, 0.16);
+  background: #e6e8e8;
+  box-shadow: 0 24px 70px rgba(30, 48, 51, 0.1);
+}
+
+.reimagined-gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
+  min-height: 720px;
+  background: #b8c4c7;
+}
+
+.reimagined-image {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.reimagined-image + .reimagined-image {
+  border-left: 1px solid rgba(255, 250, 242, 0.7);
+}
+
+.reimagined-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.88) contrast(0.98);
+}
+
+.reimagined-image--lead img {
+  object-position: center top;
+}
+
+.reimagined-image--swatch {
+  background: #899ba1;
+}
+
+.reimagined-image--swatch img {
+  object-position: center;
+  filter: saturate(0.92) contrast(1.02);
+}
+
+.reimagined-image figcaption {
+  position: absolute;
+  right: 0.8rem;
+  bottom: 0.8rem;
+  left: 0.8rem;
+  padding: 0.6rem 0.75rem;
+  background: rgba(23, 47, 53, 0.76);
+  color: #fffaf2;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.reimagined-copy {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 4vw, 3.2rem);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(225, 232, 232, 0.84)),
+    #e6e8e8;
+}
+
+.reimagined-copy h3 {
+  max-width: 620px;
+  color: #172f35;
+  font-size: clamp(2.7rem, 5vw, 5rem);
+}
+
+.reimagined-lede {
+  margin: 1.3rem 0;
+  color: #33565d;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+  line-height: 1.18;
+}
+
+.reimagined-copy > p {
+  color: #4e5655;
+}
+
+.reimagined-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 1rem 0;
+  border-top: 1px solid rgba(23, 47, 53, 0.18);
+  border-left: 1px solid rgba(23, 47, 53, 0.18);
+}
+
+.reimagined-details div {
+  padding: 0.9rem;
+  border-right: 1px solid rgba(23, 47, 53, 0.18);
+  border-bottom: 1px solid rgba(23, 47, 53, 0.18);
+}
+
+.reimagined-details dt {
+  color: #8c2633;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.reimagined-details dd {
+  margin: 0.35rem 0 0;
+  color: #34484b;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.reimagined-notes {
+  color: #4e5655;
+  font-size: 0.92rem;
+}
+
+.reimagined-notes p {
+  margin: 0.65rem 0;
+}
+
+.reimagined-swatch-study {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.42fr) minmax(0, 1fr);
+  align-items: stretch;
+  margin: 1rem 0 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgba(23, 47, 53, 0.18);
+  background: rgba(255, 250, 242, 0.56);
+}
+
+.reimagined-swatch-study img {
+  width: 100%;
+  height: 100%;
+  min-height: 150px;
+  object-fit: contain;
+  padding: 0.55rem;
+  background: #d9dfe0;
+}
+
+.reimagined-swatch-study figcaption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 1rem;
+  color: #405255;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.reimagined-swatch-study strong {
+  color: #8c2633;
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.reimagined-copy footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(23, 47, 53, 0.18);
+  color: #213f3a;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .wardrobe-feature {
@@ -1144,8 +1440,23 @@ h3 {
 }
 
 .wardrobe-card--coming-soon .wardrobe-image img {
+  object-position: center top;
   opacity: 0.52;
   filter: saturate(0.72) contrast(0.92);
+}
+
+.wardrobe-card--reimagined .wardrobe-image {
+  background:
+    linear-gradient(rgba(99, 119, 128, 0.18), rgba(99, 119, 128, 0.18)),
+    url('https://res.cloudinary.com/dwpvbtoad/image/upload/v1782310959/Dove-grey-blue-swatch_yavenx.png')
+      center / cover;
+}
+
+.wardrobe-card--reimagined .wardrobe-image img {
+  object-fit: contain;
+  object-position: center top;
+  opacity: 1;
+  filter: none;
 }
 
 .wardrobe-coming-soon-veil {
@@ -1242,26 +1553,387 @@ h3 {
 }
 
 .site-footer {
+  display: grid;
+  gap: 1.5rem;
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1rem, 4vw, 4rem);
+  border-top: 1px solid rgba(33, 28, 26, 0.14);
+  background: #172f35;
+  color: #e9ece3;
+}
+
+.site-footer .eyebrow {
+  margin-bottom: 0.45rem;
+  color: #c8d99d;
+}
+
+.site-footer-brand strong {
+  color: #fffaf2;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.5rem, 5vw, 4.4rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.site-footer-brand p:last-child {
+  margin: 1rem 0 0;
+}
+
+.site-footer a {
+  color: #fffaf2;
+}
+
+.site-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.75rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid rgba(255, 250, 242, 0.18);
+  border-bottom: 1px solid rgba(255, 250, 242, 0.18);
+}
+
+.site-footer-links a {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.site-footer-links span {
+  color: #9fb4af;
+}
+
+.site-footer-closing {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.25rem clamp(1rem, 4vw, 4rem);
-  border-top: 1px solid rgba(33, 28, 26, 0.14);
+  color: #c5d2c2;
+  font-size: 0.86rem;
+  letter-spacing: 0.04em;
+}
+
+.period-dress-story {
+  margin-top: clamp(2rem, 5vw, 4.5rem);
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  border: 1px solid rgba(33, 28, 26, 0.16);
+  background:
+    linear-gradient(135deg, rgba(36, 78, 101, 0.13), transparent 48%),
+    #f8f1e7;
+  box-shadow: 0 24px 60px rgba(44, 50, 45, 0.1);
+}
+
+.period-dress-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  border-bottom: 1px solid rgba(33, 28, 26, 0.2);
+}
+
+.period-dress-header h3 {
+  max-width: 760px;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+}
+
+.period-dress-date {
+  max-width: 180px;
+  margin: 0;
+  color: #234c56;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.period-dress-image {
+  position: relative;
+  max-width: 920px;
+  margin: clamp(2rem, 5vw, 4rem) auto 0;
+  overflow: hidden;
+  border: 1px solid rgba(33, 28, 26, 0.18);
+  background: #d9d7cf;
+}
+
+.period-dress-image img {
+  display: block;
+  width: 100%;
+  max-height: 900px;
+  object-fit: contain;
+}
+
+.period-dress-image figcaption {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  padding: 0.7rem 0.85rem;
+  background: rgba(24, 37, 42, 0.76);
+  color: #fffaf2;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  backdrop-filter: blur(5px);
+}
+
+.period-dress-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  padding: clamp(2rem, 5vw, 4rem) 0;
+}
+
+.period-dress-swatch {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.65fr) minmax(0, 1.35fr);
+  align-items: stretch;
+  margin: 0;
+  border-top: 1px solid rgba(33, 28, 26, 0.16);
+  background: #dbe1e2;
+}
+
+.period-dress-swatch img {
+  width: 100%;
+  height: 100%;
+  max-height: 360px;
+  object-fit: contain;
+  padding: clamp(0.75rem, 2vw, 1.4rem);
+  background: #bbc7ca;
+}
+
+.period-dress-swatch figcaption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  color: #46575a;
+  line-height: 1.5;
+}
+
+.period-dress-swatch strong {
+  color: #8c2633;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.period-dress-intro p {
+  margin: 0;
+  color: #234c56;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.8rem, 3.8vw, 3rem);
+  line-height: 1.08;
+}
+
+.period-dress-story-copy {
+  align-self: end;
+}
+
+.period-dress-story-copy p {
+  margin: 0;
   color: #4e4741;
 }
 
+.period-dress-story-copy p + p {
+  margin-top: 1.25rem;
+}
+
+.period-dress-details {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  border-top: 1px solid rgba(33, 28, 26, 0.2);
+  border-bottom: 1px solid rgba(33, 28, 26, 0.2);
+}
+
+.period-dress-details div {
+  padding: 1.25rem;
+}
+
+.period-dress-details div + div {
+  border-left: 1px solid rgba(33, 28, 26, 0.16);
+}
+
+.period-dress-details dt {
+  margin-bottom: 0.45rem;
+  color: #8c2633;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.period-dress-details dd {
+  margin: 0;
+  color: #211c1a;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  line-height: 1.15;
+}
+
+.period-dress-closing {
+  max-width: 720px;
+  margin: clamp(1.75rem, 4vw, 3rem) 0 0 auto;
+  color: #4e4741;
+  font-style: italic;
+  text-align: right;
+}
+
 @media (max-width: 900px) {
-  .site-header,
-  .site-footer {
+  .site-footer-closing {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .site-header {
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .site-header > .brand-mark {
+    position: relative;
+    z-index: 12;
+  }
+
+  .mobile-menu-toggle {
+    position: relative;
+    z-index: 12;
+    display: grid;
+    width: 46px;
+    height: 46px;
+    margin-left: auto;
+    padding: 11px 9px;
+    border: 1px solid rgba(33, 28, 26, 0.24);
+    border-radius: 50%;
+    background: #fbf7ef;
+    cursor: pointer;
+  }
+
+  .mobile-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: auto;
+    background: #211c1a;
+    transition: transform 180ms ease, opacity 180ms ease;
+  }
+
+  .mobile-menu-toggle.is-open span:first-child {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .mobile-menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-toggle.is-open span:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .nav-links {
+    position: fixed;
+    z-index: 14;
+    inset: 0 auto 0 0;
+    display: flex;
+    width: min(86vw, 430px);
+    height: 100dvh;
+    padding: 0 1.5rem 2rem;
+    overflow-y: auto;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0;
+    background: #fbf7ef;
+    box-shadow: 14px 0 36px rgba(33, 28, 26, 0.18);
+    transform: translateX(-105%);
+    transition: transform 220ms ease;
+  }
+
+  .nav-links.is-open {
+    transform: translateX(0);
+  }
+
+  .mobile-menu-heading {
+    display: flex;
+    min-height: 86px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(33, 28, 26, 0.2);
+  }
+
+  .mobile-menu-heading > a {
+    display: flex;
+    flex-direction: column;
+    color: #211c1a;
+    line-height: 1;
+  }
+
+  .mobile-menu-heading span {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .mobile-menu-heading strong {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.65rem;
+    font-weight: 500;
+  }
+
+  .mobile-menu-heading button {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #211c1a;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .nav-links > a {
+    display: flex;
+    min-height: 66px;
+    align-items: center;
+    border-bottom: 1px solid rgba(33, 28, 26, 0.12);
+    color: #211c1a;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.45rem;
+  }
+
+  .mobile-menu-backdrop {
+    position: fixed;
+    z-index: 13;
+    inset: 0;
+    display: block;
+    padding: 0;
+    border: 0;
+    background: rgba(24, 20, 18, 0.52);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 220ms ease;
+  }
+
+  .mobile-menu-backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  body.mobile-menu-open {
+    overflow: hidden;
   }
 
   .hero-section,
   .split-section,
   .section-heading-wide,
+  .contact-section,
   .wardrobe-feature,
+  .reimagined-story,
   .wardrobe-alternative,
   .wardrobe-memory-group,
   .vintage-memory,
@@ -1270,6 +1942,31 @@ h3 {
   .collector-era-soundtrack,
   .collector-story-layout {
     grid-template-columns: 1fr;
+  }
+
+  .period-dress-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .period-dress-swatch {
+    grid-template-columns: 1fr;
+  }
+
+  .window-trees-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .period-dress-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .period-dress-details div:nth-child(3) {
+    border-top: 1px solid rgba(33, 28, 26, 0.16);
+    border-left: 0;
+  }
+
+  .period-dress-details div:nth-child(4) {
+    border-top: 1px solid rgba(33, 28, 26, 0.16);
   }
 
   .collector-gallery-caption {
@@ -1292,6 +1989,10 @@ h3 {
     min-height: 520px;
   }
 
+  .reimagined-gallery {
+    min-height: 620px;
+  }
+
   .hero-section {
     min-height: auto;
   }
@@ -1306,11 +2007,25 @@ h3 {
 }
 
 @media (max-width: 560px) {
-  .nav-links {
-    width: 100%;
+  .period-dress-header {
     align-items: flex-start;
     flex-direction: column;
-    gap: 0.6rem;
+  }
+
+  .period-dress-date,
+  .period-dress-closing {
+    max-width: none;
+    text-align: left;
+  }
+
+  .period-dress-details {
+    grid-template-columns: 1fr;
+  }
+
+  .period-dress-details div + div,
+  .period-dress-details div:nth-child(3) {
+    border-top: 1px solid rgba(33, 28, 26, 0.16);
+    border-left: 0;
   }
 
   h1 {
@@ -1328,6 +2043,42 @@ h3 {
   .wardrobe-feature-gallery {
     grid-template-columns: 1fr;
     min-height: auto;
+  }
+
+  .window-trees-wrap-image {
+    min-height: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .reimagined-gallery {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .reimagined-image {
+    aspect-ratio: 4 / 5;
+  }
+
+  .reimagined-image + .reimagined-image {
+    border-top: 1px solid rgba(255, 250, 242, 0.7);
+    border-left: 0;
+  }
+
+  .reimagined-details {
+    grid-template-columns: 1fr;
+  }
+
+  .reimagined-swatch-study {
+    grid-template-columns: 1fr;
+  }
+
+  .reimagined-swatch-study img {
+    max-height: 320px;
+  }
+
+  .reimagined-copy footer {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .collector-story-gallery {

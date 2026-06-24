@@ -1,9 +1,13 @@
+import { useEffect, useState } from 'react'
 import heroImg from './assets/hero.png'
 import brightWhiteShortsGuernsey from './assets/wardrobe/bright-white-shorts-guernsey.png'
 import brightWhiteShortsStudio from './assets/wardrobe/bright-white-shorts-studio.png'
 import windowTreesDress from './assets/window-trees/window-trees-dress.png'
 import windowTreesGarden from './assets/window-trees/window-trees-garden.jpeg'
 import './App.css'
+
+const darkLuminousWrapImage =
+  'https://res.cloudinary.com/dwpvbtoad/image/upload/v1782129318/summereveningWrap-2026_oa7cbw.png'
 
 type Note = {
   title: string
@@ -35,7 +39,39 @@ type HoverCaptionProps = {
   caption: string
 }
 
-const heroSlides = [
+const blueSilkCottonDressImage =
+  'https://res.cloudinary.com/dwpvbtoad/image/upload/v1782305519/blue-cotton-silk-enhanced-1983_qiw8et.png'
+
+const doveGreyBlueSwatch =
+  'https://res.cloudinary.com/dwpvbtoad/image/upload/v1782310959/Dove-grey-blue-swatch_yavenx.png'
+
+const reimaginedDressImages = [
+  {
+    src: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1782309339/hero-studio_g7vtmp.png',
+    alt: 'Editorial studio portrait of the reimagined dove-grey-blue silk-cotton dress',
+    caption: 'Boutique House Reimagined · Studio portrait',
+  },
+  {
+    src: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1782309000/darkblue-cotton-silk-reimagined4-1983_c1wsuk.png',
+    alt: 'Reimagined dove-grey-blue silk-cotton dress beside a classic Ford Capri',
+    caption: 'The 1984 silhouette, reimagined',
+  },
+  {
+    src: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1782308989/darkblue-cotton-silk-reimagined3-1983_hauvw3.png',
+    alt: 'Garden editorial view of the reimagined silk-cotton dress',
+    caption: 'Garden study · Quiet mid-eighties glamour',
+  },
+]
+
+const archiveHeroSlides = [
+  {
+    src: windowTreesDress,
+    alt: 'Model wearing the luminous green Window Trees linen-cotton dress',
+  },
+  {
+    src: brightWhiteShortsGuernsey,
+    alt: 'Model wearing bright-white structured cotton shorts on the Guernsey coast',
+  },
   {
     src: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781876234/boutique_pair_1_neqqx2.png',
     alt: 'Boutique Pair 1',
@@ -64,10 +100,21 @@ const heroSlides = [
     src: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1782082071/cotton-voile-shimmer-skirt2_ubdmxu.png',
     alt: 'Cotton voile blouse and shimmer skirt',
   },
+  {
+    src: blueSilkCottonDressImage,
+    alt: 'Blue silk-cotton work dress photographed beside a 1968 Ford Capri',
+  },
 ]
 
+const heroSlides = [...reimaginedDressImages.slice(0, 2), ...archiveHeroSlides]
+
 const rightColumnSlides = [
-  ...heroSlides.slice(0, 6),
+  reimaginedDressImages[0],
+  {
+    src: doveGreyBlueSwatch,
+    alt: 'Dove-grey-blue silk-cotton swatch from the 1984 work-dress story',
+  },
+  ...archiveHeroSlides.filter((slide) => slide.src !== blueSilkCottonDressImage),
 ]
 
 const seasonalOrbs = [
@@ -128,6 +175,15 @@ const notes: Note[] = [
   },
 ]
 
+const navigationItems = [
+  { label: 'Collections', href: '#notes' },
+  { label: '1984 Archive', href: '#blue-silk-cotton-work-dress' },
+  { label: 'The Wardrobe', href: '#the-wardrobe' },
+  { label: 'Stories', href: '#wardrobe-stories' },
+  { label: 'Journal', href: '#journal' },
+  { label: 'Contact', href: '#contact' },
+]
+
 const findings: Finding[] = [
   {
     title: 'The Useful Patina',
@@ -151,6 +207,14 @@ const findings: Finding[] = [
 
 const wardrobeItems: WardrobeItem[] = [
   {
+    title: 'Dove-Grey-Blue Dress · Reimagined',
+    category: 'Boutique House Reimagined',
+    description:
+      'A contemporary product-line study drawn from the original silk-cotton work dress worn in Adelaide in 1984.',
+    price: 'Product line preview',
+    imageUrl: reimaginedDressImages[0].src,
+  },
+  {
     title: 'Munich Stripe Blouse & Leather Skirt',
     category: 'Timeless Dressing',
     description:
@@ -160,7 +224,8 @@ const wardrobeItems: WardrobeItem[] = [
       'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781730284/Munich-timeless-dressing_moera9.png',
     isComingSoon: true,
     comingSoonCopy: 'Preview image while this wardrobe note is prepared.',
-    originalUrl: 'https://boutique-house-production-751b.up.railway.app/products/?category=timeless_dressing',
+    originalUrl:
+      'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781730284/Munich-timeless-dressing_moera9.png',
   },
   {
     title: 'White Shirt Mirror Study',
@@ -172,7 +237,8 @@ const wardrobeItems: WardrobeItem[] = [
       'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781875183/Clood-paper-cottontopCarousel_tnxube.png',
     isComingSoon: true,
     comingSoonCopy: 'Preview image while this piece is prepared.',
-    originalUrl: 'https://boutique-house-production-751b.up.railway.app/products/?collection=vintage_notes',
+    originalUrl:
+      'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781875183/Clood-paper-cottontopCarousel_tnxube.png',
   },
   {
     title: 'Linen Tailored Set',
@@ -180,7 +246,12 @@ const wardrobeItems: WardrobeItem[] = [
     description:
       'Relaxed tailoring with a soft vintage line: useful for slow mornings, city errands, and collected wardrobes.',
     price: 'Archive note',
-    originalUrl: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781876234/boutique_pair_2_lse1sd.png',
+    imageUrl:
+      'https://res.cloudinary.com/dwpvbtoad/image/upload/v1782312597/Linen-tailored-1986_bceu5o.png',
+    isComingSoon: true,
+    comingSoonCopy: 'Preview image while this tailored wardrobe note is prepared.',
+    originalUrl:
+      'https://res.cloudinary.com/dwpvbtoad/image/upload/v1782312597/Linen-tailored-1986_bceu5o.png',
   },
   {
     title: 'Minimal Knit Edit',
@@ -188,6 +259,10 @@ const wardrobeItems: WardrobeItem[] = [
     description:
       'Quiet knitwear notes in neutral texture, made for layering with denim, wool, and old leather.',
     price: 'Archive note',
+    imageUrl:
+      'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781876870/neutrals-knit-vintage_mfypob.jpg',
+    isComingSoon: true,
+    comingSoonCopy: 'Preview image while this knitwear edit is prepared.',
     originalUrl: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781876870/neutrals-knit-vintage_mfypob.jpg',
   },
   {
@@ -196,6 +271,10 @@ const wardrobeItems: WardrobeItem[] = [
     description:
       'A note on faded blues, softened seams, and denim that feels better after years of ordinary wear.',
     price: 'Archive note',
+    imageUrl:
+      'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781877150/worn-denim-study_jxa1n1.jpg',
+    isComingSoon: true,
+    comingSoonCopy: 'Preview image while this Worn & Loved study is prepared.',
     originalUrl: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781877150/worn-denim-study_jxa1n1.jpg',
   },
   {
@@ -204,25 +283,96 @@ const wardrobeItems: WardrobeItem[] = [
     description:
       'Crisp cotton, pearl buttons, sleeve folds, and the kind of shirt that makes a wardrobe feel edited.',
     price: 'Archive note',
-    originalUrl: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781879429/Cotton-voile-fragment_xwgec7.png',
+    imageUrl:
+      'https://res.cloudinary.com/dwpvbtoad/image/upload/v1782313082/Early-sketch-cottonfragment_zn1rvl.png',
+    isComingSoon: true,
+    comingSoonCopy: 'Preview image while this early sketch note is prepared.',
+    originalUrl:
+      'https://res.cloudinary.com/dwpvbtoad/image/upload/v1782313082/Early-sketch-cottonfragment_zn1rvl.png',
   },
 ]
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  useEffect(() => {
+    document.body.classList.toggle('mobile-menu-open', isMenuOpen)
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsMenuOpen(false)
+      }
+    }
+
+    const closeOnDesktop = () => {
+      if (window.innerWidth > 900) {
+        setIsMenuOpen(false)
+      }
+    }
+
+    window.addEventListener('keydown', closeOnEscape)
+    window.addEventListener('resize', closeOnDesktop)
+
+    return () => {
+      document.body.classList.remove('mobile-menu-open')
+      window.removeEventListener('keydown', closeOnEscape)
+      window.removeEventListener('resize', closeOnDesktop)
+    }
+  }, [isMenuOpen])
+
+  const closeMenu = () => setIsMenuOpen(false)
+
   return (
     <div className="site-shell">
       <header className="site-header" aria-label="Main navigation">
-        <a className="brand-mark" href="#top" aria-label="Boutique House Vintage Notes home">
+        <a
+          className="brand-mark"
+          href="#top"
+          aria-label="Boutique House Vintage Notes home"
+          onClick={closeMenu}
+        >
           <span>Boutique House</span>
           <strong>Vintage Notes</strong>
         </a>
-        <nav className="nav-links" aria-label="Sections">
-          {notes.map((note) => (
-            <a href={`#${note.id}`} key={note.id}>
-              {note.title}
+        <button
+          className={`mobile-menu-toggle${isMenuOpen ? ' is-open' : ''}`}
+          type="button"
+          aria-controls="mobile-navigation"
+          aria-expanded={isMenuOpen}
+          aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+        <nav
+          className={`nav-links${isMenuOpen ? ' is-open' : ''}`}
+          id="mobile-navigation"
+          aria-label="Sections"
+        >
+          <div className="mobile-menu-heading">
+            <a href="#top" onClick={closeMenu}>
+              <span>Boutique House</span>
+              <strong>Vintage Notes</strong>
+            </a>
+            <button type="button" aria-label="Close navigation menu" onClick={closeMenu}>
+              ×
+            </button>
+          </div>
+          {navigationItems.map((item) => (
+            <a href={item.href} key={item.href} onClick={closeMenu}>
+              {item.label}
             </a>
           ))}
         </nav>
+        <button
+          className={`mobile-menu-backdrop${isMenuOpen ? ' is-open' : ''}`}
+          type="button"
+          aria-label="Close navigation menu"
+          tabIndex={isMenuOpen ? 0 : -1}
+          onClick={closeMenu}
+        />
       </header>
 
       <main id="top">
@@ -239,8 +389,8 @@ function App() {
               <a className="button button-primary" href="#notes">
                 Read Notes
               </a>
-              <a className="button button-secondary" href="#finds">
-                View Finds
+              <a className="button button-secondary" href="#the-wardrobe">
+                Explore The Wardrobe
               </a>
             </div>
           </div>
@@ -398,11 +548,133 @@ function App() {
               </section>
             </div>
 
+            <section
+              className="window-trees-wrap"
+              aria-labelledby="dark-luminous-wrap-title"
+            >
+              <figure className="window-trees-wrap-image">
+                <img
+                  src={darkLuminousWrapImage}
+                  alt="Dark luminous green evening wrap with tiny leaf-shimmer motifs"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>Dark Luminous Wrap · Evening Elegance</figcaption>
+              </figure>
+              <div className="window-trees-wrap-copy">
+                <p className="eyebrow">
+                  Vintage Notes · Timeless Dressing · Evening Elegance
+                </p>
+                <h4 id="dark-luminous-wrap-title">The Dark Luminous Wrap</h4>
+                <p>
+                  A dark luminous green evening wrap with tiny leaf-shimmer motifs.
+                  Designed for quiet evening elegance and worn as a companion piece
+                  to the Timeless Dressing collection.
+                </p>
+                <span>
+                  A deeper garden tone for twilight: softly reflective, understated,
+                  and naturally paired with The Window Trees dress.
+                </span>
+              </div>
+            </section>
+
             <blockquote className="window-trees-reflection">
               <p className="eyebrow">Designer’s reflection</p>
               “I wanted to capture the feeling of standing at my window, the trees glowing
               in morning light, and translate that serenity into a dress that moves with the day.”
             </blockquote>
+          </article>
+
+          <article
+            id="blue-silk-cotton-work-dress"
+            className="period-dress-story"
+            aria-labelledby="blue-work-dress-title"
+          >
+            <header className="period-dress-header">
+              <div>
+                <p className="eyebrow">Timeless Dressing · Vintage Notes · 1984</p>
+                <h3 id="blue-work-dress-title">Blue Silk-Cotton Work Dress</h3>
+              </div>
+              <p className="period-dress-date">A working wardrobe memory</p>
+            </header>
+
+            <figure className="period-dress-image">
+              <img
+                src={blueSilkCottonDressImage}
+                alt="Blue silk-cotton work dress worn with dark brown Charles Jourdan courts beside a 1968 Ford Capri"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                Garden portrait · Blue silk-cotton work dress · 1984
+              </figcaption>
+            </figure>
+
+            <div className="period-dress-layout">
+              <div className="period-dress-intro">
+                <p>
+                  Worn as part of my work ensemble in 1984: a blue silk-cotton
+                  dress paired with dark brown leather courts by Charles Jourdan.
+                </p>
+              </div>
+
+              <div className="period-dress-story-copy">
+                <p>
+                  I wore this dress while working in a creative fashion boutique
+                  in the city shopping precinct. It was everyday professional
+                  styling for that period: polished, practical, and expressive
+                  enough for a fashion-led setting.
+                </p>
+                <p>
+                  The outfit was photographed in the garden beside my first car,
+                  a 1968 Ford Capri with black leather seats and distinctive
+                  G-stripes running along the sides.
+                </p>
+              </div>
+            </div>
+
+            <figure className="period-dress-swatch">
+              <img
+                src={doveGreyBlueSwatch}
+                alt="Dove-grey-blue silk-cotton fabric swatch associated with the 1984 work dress"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <strong>Original colour reference · 1984</strong>
+                <span>
+                  Dove-grey-blue silk-cotton: the softly lustrous colour and tactile
+                  fabric reference behind the work ensemble.
+                </span>
+              </figcaption>
+            </figure>
+
+            <dl className="period-dress-details">
+              <div>
+                <dt>Dress</dt>
+                <dd>Blue silk-cotton work dress</dd>
+              </div>
+              <div>
+                <dt>Shoes</dt>
+                <dd>Dark brown leather courts by Charles Jourdan</dd>
+              </div>
+              <div>
+                <dt>Setting</dt>
+                <dd>Garden portrait beside a 1968 Ford Capri</dd>
+              </div>
+              <div>
+                <dt>Context</dt>
+                <dd>
+                  Creative fashion boutique, city shopping precinct, Adelaide,
+                  South Australia
+                </dd>
+              </div>
+            </dl>
+
+            <footer className="period-dress-closing">
+              The image records the ensemble exactly as it was worn for everyday
+              professional life in 1984.
+            </footer>
           </article>
         </section>
 
@@ -429,6 +701,105 @@ function App() {
               quiet styling ideas, kept separate from the main Boutique House shop.
             </p>
           </div>
+          <article
+            id="dove-grey-blue-reimagined"
+            className="reimagined-story"
+            aria-labelledby="reimagined-dress-title"
+          >
+            <div className="reimagined-gallery" aria-label="Reimagined dress editorial photographs">
+              <figure className="reimagined-image reimagined-image--lead">
+                <img
+                  src={reimaginedDressImages[0].src}
+                  alt={reimaginedDressImages[0].alt}
+                  loading="eager"
+                  decoding="async"
+                />
+                <figcaption>{reimaginedDressImages[0].caption}</figcaption>
+              </figure>
+              <figure className="reimagined-image reimagined-image--swatch">
+                <img
+                  src={doveGreyBlueSwatch}
+                  alt="Close crop of the original 1984 dove-grey-blue fabric swatch"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>Archive fabric · Dove-grey-blue · 1984</figcaption>
+              </figure>
+            </div>
+
+            <div className="reimagined-copy">
+              <header>
+                <p className="eyebrow">
+                  Timeless Dressing · Vintage Notes (Reimagined) · 1984 · Blue
+                  Silk-Cotton · Charles Jourdan · Ford Capri
+                </p>
+                <h3 id="reimagined-dress-title">The Dove-Grey-Blue Dress, Reimagined</h3>
+                <p className="reimagined-lede">
+                  A new Boutique House product line, developed from the original
+                  silk-cotton dress I wore while working in an Adelaide fashion boutique
+                  in 1984.
+                </p>
+              </header>
+
+              <p>
+                The original photograph becomes a clear editorial Vintage Notes image:
+                calm, balanced, and faithful to the quietly professional glamour of the
+                mid-eighties. The model faces the camera naturally, without exaggerated
+                styling or shoulder pads.
+              </p>
+
+              <dl className="reimagined-details">
+                <div>
+                  <dt>Cloth</dt>
+                  <dd>Heavier-weave blue silk-cotton, softly lustrous and structured</dd>
+                </div>
+                <div>
+                  <dt>Shape</dt>
+                  <dd>Modest V-neckline, defined waist, and skirt falling just below the knee</dd>
+                </div>
+                <div>
+                  <dt>Sleeves</dt>
+                  <dd>Short and gently puffed, with soft gathers at the shoulder</dd>
+                </div>
+                <div>
+                  <dt>Signature</dt>
+                  <dd>Matching side-fastening belt with a small flower motif at the clasp</dd>
+                </div>
+              </dl>
+
+              <div className="reimagined-notes">
+                <p>
+                  <strong>Styling:</strong> dark brown leather courts by Charles Jourdan;
+                  softly waved, shoulder-length blonde hair, parted to the left.
+                </p>
+                <p>
+                  <strong>Setting:</strong> natural garden daylight beside a 1968 Ford
+                  Capri with black leather seats and G-stripes, held in a soft 1980s film tone.
+                </p>
+              </div>
+
+              <figure className="reimagined-swatch-study">
+                <img
+                  src={doveGreyBlueSwatch}
+                  alt="Full archive swatch showing the colour and texture of the original 1984 dove-grey-blue fabric"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>
+                  <strong>Archive colour reference · 1984</strong>
+                  <span>
+                    The original dove-grey-blue swatch: a tactile reference for the
+                    reimagined silk-cotton cloth, its softly muted colour and heavier weave.
+                  </span>
+                </figcaption>
+              </figure>
+
+              <footer>
+                <strong>Overall mood</strong>
+                <span>Confident · elegant · quietly professional</span>
+              </footer>
+            </div>
+          </article>
           <article className="wardrobe-feature" aria-labelledby="bright-white-shorts-title">
             <div className="wardrobe-feature-gallery">
               <figure className="wardrobe-feature-image wardrobe-feature-image--main">
@@ -513,7 +884,7 @@ function App() {
               <blockquote>Structured bright-white shorts, 1985/86. Clean, crisp, starch-optional.</blockquote>
             </div>
           </article>
-          <div className="wardrobe-memory-group">
+          <div id="wardrobe-stories" className="wardrobe-memory-group">
           <section className="vintage-memory" aria-labelledby="double-bay-title">
             <div className="vintage-memory-heading">
               <p className="eyebrow">Wardrobe memory · Sydney</p>
@@ -658,6 +1029,28 @@ function App() {
               <li>
                 <strong>1985</strong>
                 <span>
+                  Philip Oakey &amp; Giorgio Moroder release{' '}
+                  <a
+                    className="music-link"
+                    href="https://youtu.be/PE1lzqJCeJ0?si=c8ofLKm4rg6YUEfo"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <em>
+                      <HoverCaption caption="1985 · Philip Oakey & Giorgio Moroder · Polished Sydney workday futurism.">
+                        Together in Electric Dreams
+                      </HoverCaption>
+                    </em>
+                  </a>
+                  . I was working in a smart bank in Sydney, wearing a cream cotton suit
+                  with a midi-length skirt, matching cream blouse, and black satin tie
+                  bow. I always felt very polished in that outfit, bought from guess
+                  where: Georges in Cross Street, Double Bay.
+                </span>
+              </li>
+              <li>
+                <strong>1985</strong>
+                <span>
                   Dire Straits release{' '}
                   <a
                     className="music-link"
@@ -723,13 +1116,21 @@ function App() {
                 <strong>1986 / 1987</strong>
                 <span>
                   Orchestral Manoeuvres in the Dark release{' '}
-                  <em>
-                    <HoverCaption caption="Global release September 1986 · Reached Sydney as a hit in late 1986 / 1987 · Truly atmospheric music.">
-                      Forever Live and Die
-                    </HoverCaption>
-                  </em>
+                  <a
+                    className="music-link"
+                    href="https://youtu.be/moFiaQPCl04?si=cyK79uEtiFYheUad"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <em>
+                      <HoverCaption caption="Global release September 1986 · Reached Sydney, NSW in late 1986 / 1987 · Big Australian hit, truly atmospheric.">
+                        Forever Live and Die
+                      </HoverCaption>
+                    </em>
+                  </a>
                   , globally released in September 1986 and reaching Sydney, Australia
-                  as a hit in late 1986 / 1987, truly atmospheric music.
+                  as a big hit in late 1986 / 1987. I always associated it with Sydney
+                  high life, truly atmospheric music.
                 </span>
               </li>
             </ul>
@@ -796,11 +1197,18 @@ function App() {
                 <strong>1986 / 1987</strong>
                 <span>
                   Orchestral Manoeuvres in the Dark ·{' '}
-                  <em>
-                    <HoverCaption caption="Global release September 1986 · Sydney hit in late 1986 / 1987 · Truly atmospheric.">
-                      Forever Live and Die
-                    </HoverCaption>
-                  </em>
+                  <a
+                    className="music-link"
+                    href="https://youtu.be/moFiaQPCl04?si=cyK79uEtiFYheUad"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <em>
+                      <HoverCaption caption="Global release September 1986 · Sydney, NSW hit in late 1986 / 1987 · Sydney high-life atmosphere.">
+                        Forever Live and Die
+                      </HoverCaption>
+                    </em>
+                  </a>
                 </span>
               </li>
             </ul>
@@ -1074,7 +1482,11 @@ function App() {
           <div className="wardrobe-grid">
             {wardrobeItems.map((item) => (
               <article
-                className={`wardrobe-card${item.isComingSoon ? ' wardrobe-card--coming-soon' : ''}`}
+                className={`wardrobe-card${item.isComingSoon ? ' wardrobe-card--coming-soon' : ''}${
+                  item.title === 'Dove-Grey-Blue Dress · Reimagined'
+                    ? ' wardrobe-card--reimagined'
+                    : ''
+                }`}
                 key={item.title}
               >
                 <div className="wardrobe-image">
@@ -1120,11 +1532,77 @@ function App() {
             ))}
           </div>
         </section>
+
+        <section id="contact" className="contact-section" aria-labelledby="contact-title">
+          <div>
+            <p className="eyebrow">Stay in touch</p>
+            <h2 id="contact-title">A Note From Vintage Notes</h2>
+          </div>
+          <div className="contact-section-copy">
+            <p>
+              Questions about an archive story, a reimagined piece, or the wider
+              Boutique House collection are always welcome.
+            </p>
+            <a className="contact-email" href="mailto:hello@boutiquehouse.co.uk">
+              hello@boutiquehouse.co.uk
+            </a>
+            <a
+              className="button button-secondary"
+              href="https://boutique-house-production-751b.up.railway.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Visit Boutique House
+            </a>
+          </div>
+        </section>
       </main>
 
       <footer className="site-footer">
-        <span>Boutique House Vintage Notes</span>
-        <a href="#top">Back to top</a>
+        <div className="site-footer-brand">
+          <p className="eyebrow">Part of the Boutique House Family</p>
+          <strong>Vintage Notes</strong>
+          <p>
+            <a
+              href="https://boutique-house-production-751b.up.railway.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Boutique House
+            </a>
+            {' '}· © 2026 Boutique House · Part of the{' '}
+            <a
+              href="https://soliv1.github.io/moodsboard-reflections-family/#/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Cinematic Moods Board Family
+            </a>
+          </p>
+        </div>
+
+        <nav className="site-footer-links" aria-label="Boutique House information">
+          <a href="https://boutique-house-production-751b.up.railway.app/delivery/" target="_blank" rel="noreferrer">
+            Delivery
+          </a>
+          <span aria-hidden="true">·</span>
+          <a href="https://boutique-house-production-751b.up.railway.app/track-order/" target="_blank" rel="noreferrer">
+            Track Your Order
+          </a>
+          <span aria-hidden="true">·</span>
+          <a href="https://boutique-house-production-751b.up.railway.app/legal/privacy/" target="_blank" rel="noreferrer">
+            Privacy Policy
+          </a>
+          <span aria-hidden="true">·</span>
+          <a href="https://boutique-house-production-751b.up.railway.app/legal/terms/" target="_blank" rel="noreferrer">
+            Terms &amp; Conditions
+          </a>
+        </nav>
+
+        <div className="site-footer-closing">
+          <span>Vintage Boutique UK · Curated Living · Worcestershire</span>
+          <a href="#top">Back to top ↑</a>
+        </div>
       </footer>
     </div>
   )
