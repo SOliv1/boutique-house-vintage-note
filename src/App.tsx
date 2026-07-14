@@ -4,6 +4,8 @@ import brightWhiteShortsGuernsey from './assets/wardrobe/bright-white-shorts-gue
 import brightWhiteShortsStudio from './assets/wardrobe/bright-white-shorts-studio.png'
 import windowTreesDress from './assets/window-trees/window-trees-dress.png'
 import windowTreesGarden from './assets/window-trees/window-trees-garden.jpeg'
+import whiteSatinSilkSkorts from './assets/edits/white-satin-silk-skorts1984.jpg'
+import whiteSatinSilkSkortsSkirt from './assets/edits/white-satin-silk-skorts-skirt1984.jpg'
 import './App.css'
 
 const darkLuminousWrapImage =
@@ -701,6 +703,73 @@ function App() {
               quiet styling ideas, kept separate from the main Boutique House shop.
             </p>
           </div>
+
+          <div className="vintage-essay">
+            <h2>1984 Engagement Skort Dress · Archive Essay</h2>
+
+            <p>
+              This piece sits at the intersection of memory, tailoring, and quiet summer atmosphere.
+              The 1984 engagement dress is part of the Boutique House archive. It reflects early adulthood,
+              Adelaide light, and the calm interiors of a North Adelaide home.
+            </p>
+
+            <div
+              className="vintage-essay-gallery"
+              aria-label="1984 engagement skort dress editorial images"
+            >
+              <figure className="vintage-essay-image vintage-essay-image--lead">
+                <img
+                  src={whiteSatinSilkSkorts}
+                  alt="Reimagined white satin silk engagement skort dress with gold lamé belt and chainmail sandals"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>White silk satin skort dress · Reimagined from 1984</figcaption>
+              </figure>
+              <figure className="vintage-essay-image">
+                <img
+                  src={whiteSatinSilkSkortsSkirt}
+                  alt="Editorial detail of the white satin silk skort skirt with gold lamé styling"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>Skort construction · Silk satin and gold lamé detail</figcaption>
+              </figure>
+            </div>
+
+            <p>
+              The dress was made from white silk satin with a soft reflective sheen. The updated version
+              preserves the original fabric character while improving movement. The skirt is now a concealed
+              skort with a clean outer drape and a tailored inner layer.
+            </p>
+
+            <p>
+              A diagonal gold-thread motif ran from the left shoulder across the bodice and around the hem.
+              The reinterpretation treats this motif as architectural linework that frames the silhouette.
+            </p>
+
+            <p>
+              The original gold lamé tie belt is reimagined as a sculpted accessory. Slightly wider. Stabilised.
+              Calibrated to match the gold tone of the sandals.
+            </p>
+
+            <p>
+              Gold lamé and chainmail sandals complete the outfit. The updated stance improves comfort with
+              higher arch support, secure ankle wrap, and softened chainmail.
+            </p>
+
+            <p>
+              The dress was worn at a first engagement party in 1984 in North Adelaide. Cream carpets and
+              creamy white walls created a quiet palette that harmonised with the garment. The piece was
+              purchased on Melbourne Street or at Burnside Village.
+            </p>
+
+            <p>
+              The modern version aligns with Boutique House principles: tailoring, texture, and slow wardrobe
+              ideas. It stands as a reference point for timeless dressing and atmospheric design.
+            </p>
+          </div>
+
           <article
             id="dove-grey-blue-reimagined"
             className="reimagined-story"
@@ -1609,4 +1678,3 @@ function App() {
 }
 
 export default App
-
