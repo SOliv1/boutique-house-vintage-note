@@ -2223,7 +2223,7 @@ h3 {
 
   .skort-thumbnail {
     width: min(150px, 58%);
-    justify-self: end;
+    justify-self: center;
   }
 
   .window-trees-gallery {
