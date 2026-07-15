@@ -3,6 +3,7 @@ import heroImg from './assets/hero.png'
 import brightWhiteShortsGuernsey from './assets/wardrobe/bright-white-shorts-guernsey.png'
 import brightWhiteShortsStudio from './assets/wardrobe/bright-white-shorts-studio.png'
 import cinematicDoubleBay from './assets/wardrobe/cinematic-doubleBay.png'
+import linenSydneyEnsemble from './assets/wardrobe/linen-sydney-ensemble.png'
 import windowTreesDress from './assets/window-trees/window-trees-dress.png'
 import windowTreesGarden from './assets/window-trees/window-trees-garden.jpeg'
 import whiteSatinSilkSkorts from './assets/edits/white-satin-silk-skorts1984.jpg'
@@ -969,6 +970,14 @@ function App() {
                   loading="lazy"
                 />
                 <figcaption>Double Bay evening study</figcaption>
+              </figure>
+              <figure className="vintage-memory-card">
+                <img
+                  src={linenSydneyEnsemble}
+                  alt="Linen Sydney ensemble wardrobe memory with Double Bay 1986 archive tag"
+                  loading="lazy"
+                />
+                <figcaption>Linen Sydney ensemble</figcaption>
               </figure>
             </div>
             <div className="vintage-memory-copy">
