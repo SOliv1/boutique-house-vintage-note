@@ -405,6 +405,94 @@ h3 {
   background: #edf3ef;
 }
 
+.vintage-essay {
+  display: grid;
+  gap: 1rem;
+}
+
+.vintage-essay-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(120px, 150px);
+  align-items: start;
+  gap: clamp(1rem, 3vw, 2rem);
+}
+
+.vintage-essay-header h2 {
+  margin: 0;
+}
+
+.skort-thumbnail {
+  width: 100%;
+  margin: 0;
+}
+
+.skort-thumbnail img {
+  object-position: center top;
+}
+
+.window-trees-story {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  margin-top: clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(1.25rem, 3.2vw, 2.2rem);
+  border: 1px solid rgba(33, 28, 26, 0.14);
+  background: #fffaf2;
+}
+
+.window-trees-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid rgba(33, 28, 26, 0.14);
+  background: rgba(33, 28, 26, 0.16);
+}
+
+.window-trees-image {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.window-trees-image img {
+  display: block;
+  width: 100%;
+  height: clamp(250px, 31vw, 370px);
+  object-fit: contain;
+  background: transparent;
+}
+
+.window-trees-image--dress {
+  background: #f6f0d8;
+}
+
+.window-trees-image--dress img {
+  background: #f6f0d8;
+}
+
+.window-trees-image--garden {
+  background: #edf4f8;
+}
+
+.window-trees-image--garden img {
+  background: #edf4f8;
+}
+
+.window-trees-image figcaption {
+  position: static;
+  width: 100%;
+  max-width: none;
+  padding: 0.42rem 0.6rem;
+  background: rgba(24, 37, 42, 0.74);
+  color: #fffaf2;
+  font-size: 0.64rem;
+  letter-spacing: 0.06em;
+  line-height: 1.25;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .window-trees-wrap {
   display: grid;
   grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
@@ -499,7 +587,7 @@ h3 {
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 560px;
+  min-height: 430px;
   object-fit: cover;
   filter: saturate(0.9) contrast(0.98);
 }
@@ -536,7 +624,7 @@ h3 {
 .reimagined-gallery {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
-  min-height: 720px;
+  min-height: 560px;
   background: #b8c4c7;
 }
 
@@ -547,7 +635,7 @@ h3 {
   overflow: hidden;
 }
 
-.reimagined-image + .reimagined-image {
+.reimagined-image+.reimagined-image {
   border-left: 1px solid rgba(255, 250, 242, 0.7);
 }
 
@@ -607,7 +695,7 @@ h3 {
   line-height: 1.18;
 }
 
-.reimagined-copy > p {
+.reimagined-copy>p {
   color: #4e5655;
 }
 
@@ -711,7 +799,7 @@ h3 {
 .wardrobe-feature-gallery {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
-  min-height: 620px;
+  min-height: 500px;
   background: #d7d5c6;
 }
 
@@ -722,7 +810,7 @@ h3 {
   overflow: hidden;
 }
 
-.wardrobe-feature-image + .wardrobe-feature-image {
+.wardrobe-feature-image+.wardrobe-feature-image {
   border-left: 1px solid rgba(255, 250, 242, 0.72);
 }
 
@@ -1049,7 +1137,7 @@ h3 {
   background: radial-gradient(circle, var(--orb-haze) 0%, #5f6465 62%, #101315 100%);
 }
 
-.carousel-orb > span {
+.carousel-orb>span {
   position: absolute;
   inset: 14%;
   border: 1px solid rgba(255, 255, 255, 0.46);
@@ -1231,7 +1319,7 @@ h3 {
 .collector-story-image img {
   display: block;
   width: 100%;
-  max-height: 780px;
+  max-height: 560px;
   object-fit: contain;
 }
 
@@ -1381,7 +1469,7 @@ h3 {
   font-size: 1.02rem;
 }
 
-.collector-story-copy > p {
+.collector-story-copy>p {
   margin: 0 0 1rem;
 }
 
@@ -1494,8 +1582,7 @@ h3 {
 .wardrobe-card--reimagined .wardrobe-image {
   background:
     linear-gradient(rgba(99, 119, 128, 0.18), rgba(99, 119, 128, 0.18)),
-    url('https://res.cloudinary.com/dwpvbtoad/image/upload/v1782310959/Dove-grey-blue-swatch_yavenx.png')
-      center / cover;
+    url('https://res.cloudinary.com/dwpvbtoad/image/upload/v1782310959/Dove-grey-blue-swatch_yavenx.png') center / cover;
 }
 
 .wardrobe-card--reimagined .wardrobe-image img {
@@ -1695,7 +1782,7 @@ h3 {
 
 .period-dress-image {
   position: relative;
-  max-width: 920px;
+  max-width: 760px;
   margin: clamp(2rem, 5vw, 4rem) auto 0;
   overflow: hidden;
   border: 1px solid rgba(33, 28, 26, 0.18);
@@ -1705,7 +1792,7 @@ h3 {
 .period-dress-image img {
   display: block;
   width: 100%;
-  max-height: 900px;
+  max-height: 620px;
   object-fit: contain;
 }
 
@@ -1782,7 +1869,7 @@ h3 {
   color: #4e4741;
 }
 
-.period-dress-story-copy p + p {
+.period-dress-story-copy p+p {
   margin-top: 1.25rem;
 }
 
@@ -1798,7 +1885,7 @@ h3 {
   padding: 1.25rem;
 }
 
-.period-dress-details div + div {
+.period-dress-details div+div {
   border-left: 1px solid rgba(33, 28, 26, 0.16);
 }
 
@@ -1838,7 +1925,7 @@ h3 {
     padding: 0.8rem 1rem;
   }
 
-  .site-header > .brand-mark {
+  .site-header>.brand-mark {
     position: relative;
     z-index: 12;
   }
@@ -1911,7 +1998,7 @@ h3 {
     border-bottom: 1px solid rgba(33, 28, 26, 0.2);
   }
 
-  .mobile-menu-heading > a {
+  .mobile-menu-heading>a {
     display: flex;
     flex-direction: column;
     color: #211c1a;
@@ -1942,7 +2029,7 @@ h3 {
     cursor: pointer;
   }
 
-  .nav-links > a {
+  .nav-links>a {
     display: flex;
     min-height: 66px;
     align-items: center;
@@ -2002,8 +2089,20 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .window-trees-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .window-trees-image img {
+    height: clamp(220px, 33vw, 320px);
+  }
+
   .vintage-essay-gallery {
     grid-template-columns: 1fr;
+  }
+
+  .vintage-essay-header {
+    grid-template-columns: minmax(0, 1fr) minmax(104px, 132px);
   }
 
   .period-dress-details {
@@ -2036,11 +2135,11 @@ h3 {
   }
 
   .wardrobe-feature-gallery {
-    min-height: 520px;
+    min-height: 420px;
   }
 
   .reimagined-gallery {
-    min-height: 620px;
+    min-height: 500px;
   }
 
   .hero-section {
@@ -2072,7 +2171,7 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .period-dress-details div + div,
+  .period-dress-details div+div,
   .period-dress-details div:nth-child(3) {
     border-top: 1px solid rgba(33, 28, 26, 0.16);
     border-left: 0;
@@ -2115,9 +2214,27 @@ h3 {
 
   .vintage-essay-image img {
     min-height: auto;
+    max-height: 360px;
   }
 
-  .reimagined-image + .reimagined-image {
+  .vintage-essay-header {
+    grid-template-columns: 1fr;
+  }
+
+  .skort-thumbnail {
+    width: min(150px, 58%);
+    justify-self: end;
+  }
+
+  .window-trees-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .window-trees-image img {
+    height: clamp(180px, 40vw, 240px);
+  }
+
+  .reimagined-image+.reimagined-image {
     border-top: 1px solid rgba(255, 250, 242, 0.7);
     border-left: 0;
   }
@@ -2157,7 +2274,7 @@ h3 {
     aspect-ratio: 4 / 5;
   }
 
-  .wardrobe-feature-image + .wardrobe-feature-image {
+  .wardrobe-feature-image+.wardrobe-feature-image {
     border-top: 1px solid rgba(255, 250, 242, 0.72);
     border-left: 0;
   }
@@ -2167,4 +2284,3 @@ h3 {
     flex-direction: column;
   }
 }
-

@@ -65,6 +65,17 @@ const reimaginedDressImages = [
   },
 ]
 
+const engagementSkortSlides = [
+  {
+    src: whiteSatinSilkSkorts,
+    alt: 'Reimagined white satin silk engagement skort dress with gold lame belt and chainmail sandals',
+  },
+  {
+    src: whiteSatinSilkSkortsSkirt,
+    alt: 'Editorial detail of the white satin silk skort skirt with gold lame styling',
+  },
+]
+
 const archiveHeroSlides = [
   {
     src: windowTreesDress,
@@ -108,9 +119,10 @@ const archiveHeroSlides = [
   },
 ]
 
-const heroSlides = [...reimaginedDressImages.slice(0, 2), ...archiveHeroSlides]
+const heroSlides = [...engagementSkortSlides, ...reimaginedDressImages.slice(0, 2), ...archiveHeroSlides]
 
 const rightColumnSlides = [
+  ...engagementSkortSlides,
   reimaginedDressImages[0],
   {
     src: doveGreyBlueSwatch,
@@ -705,37 +717,24 @@ function App() {
           </div>
 
           <div className="vintage-essay">
-            <h2>1984 Engagement Skort Dress · Archive Essay</h2>
+            <div className="vintage-essay-header">
+              <h2>1984 Engagement Skort Dress · Archive Essay</h2>
+              <figure className="motif-thumbnail skort-thumbnail">
+                <img
+                  src={whiteSatinSilkSkorts}
+                  alt="White satin-silk engagement skort dress reference"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>White satin-silk dress · 1984 reference</figcaption>
+              </figure>
+            </div>
 
             <p>
               This piece sits at the intersection of memory, tailoring, and quiet summer atmosphere.
               The 1984 engagement dress is part of the Boutique House archive. It reflects early adulthood,
               Adelaide light, and the calm interiors of a North Adelaide home.
             </p>
-
-            <div
-              className="vintage-essay-gallery"
-              aria-label="1984 engagement skort dress editorial images"
-            >
-              <figure className="vintage-essay-image vintage-essay-image--lead">
-                <img
-                  src={whiteSatinSilkSkorts}
-                  alt="Reimagined white satin silk engagement skort dress with gold lamé belt and chainmail sandals"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <figcaption>White silk satin skort dress · Reimagined from 1984</figcaption>
-              </figure>
-              <figure className="vintage-essay-image">
-                <img
-                  src={whiteSatinSilkSkortsSkirt}
-                  alt="Editorial detail of the white satin silk skort skirt with gold lamé styling"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <figcaption>Skort construction · Silk satin and gold lamé detail</figcaption>
-              </figure>
-            </div>
 
             <p>
               The dress was made from white silk satin with a soft reflective sheen. The updated version
