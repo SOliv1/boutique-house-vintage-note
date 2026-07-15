@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import heroImg from './assets/hero.png'
 import brightWhiteShortsGuernsey from './assets/wardrobe/bright-white-shorts-guernsey.png'
 import brightWhiteShortsStudio from './assets/wardrobe/bright-white-shorts-studio.png'
+import cinematicDoubleBay from './assets/wardrobe/cinematic-doubleBay.png'
 import windowTreesDress from './assets/window-trees/window-trees-dress.png'
 import windowTreesGarden from './assets/window-trees/window-trees-garden.jpeg'
 import whiteSatinSilkSkorts from './assets/edits/white-satin-silk-skorts1984.jpg'
@@ -84,6 +85,10 @@ const archiveHeroSlides = [
   {
     src: brightWhiteShortsGuernsey,
     alt: 'Model wearing bright-white structured cotton shorts on the Guernsey coast',
+  },
+  {
+    src: cinematicDoubleBay,
+    alt: 'Cinematic Double Bay wardrobe memory portrait from Sydney 1986',
   },
   {
     src: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781876234/boutique_pair_1_neqqx2.png',
@@ -957,6 +962,14 @@ function App() {
             <div className="vintage-memory-heading">
               <p className="eyebrow">Wardrobe memory · Sydney</p>
               <h2 id="double-bay-title">Double Bay 1986</h2>
+              <figure className="vintage-memory-card">
+                <img
+                  src={cinematicDoubleBay}
+                  alt="Cinematic Double Bay wardrobe memory portrait from Sydney 1986"
+                  loading="lazy"
+                />
+                <figcaption>Double Bay evening study</figcaption>
+              </figure>
             </div>
             <div className="vintage-memory-copy">
               <p>

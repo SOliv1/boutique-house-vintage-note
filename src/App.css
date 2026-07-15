@@ -949,6 +949,32 @@ h3 {
   align-self: start;
 }
 
+.vintage-memory-card {
+  width: min(100%, 220px);
+  margin: clamp(1.25rem, 3vw, 2rem) 0 0;
+  overflow: hidden;
+  border: 1px solid rgba(253, 246, 234, 0.28);
+  border-radius: 8px;
+  background: rgba(253, 246, 234, 0.1);
+  box-shadow: 0 16px 34px rgba(8, 18, 22, 0.24);
+}
+
+.vintage-memory-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.vintage-memory-card figcaption {
+  margin: 0;
+  padding: 0.7rem 0.8rem 0.8rem;
+  color: #fdf6ea;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
 .vintage-memory-copy {
   max-width: 760px;
   font-size: clamp(1rem, 1.8vw, 1.16rem);
