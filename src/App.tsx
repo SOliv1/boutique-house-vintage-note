@@ -292,7 +292,7 @@ const earlySketchCards: CollectionCard[] = [
       'Provenance, materials, emotional notes, and era context for the ruby linen design.',
     imageUrl: designerProvenance,
     prefaceImageUrl: rubyRedSydney1985,
-    prefaceCaption: 'original 1985 Darling Point dress inspiration for ruby lacquer dress',
+    prefaceCaption: 'Original 1985 Darling Point dress inspiration for ruby lacquer dress',
     detailStudy: [
       {
         title: 'Ruby-Lacquer Swatch',
