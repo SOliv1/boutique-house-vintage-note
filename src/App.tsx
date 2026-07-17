@@ -4,6 +4,12 @@ import brightWhiteShortsGuernsey from './assets/wardrobe/bright-white-shorts-gue
 import brightWhiteShortsStudio from './assets/wardrobe/bright-white-shorts-studio.png'
 import cinematicDoubleBay from './assets/wardrobe/cinematic-doubleBay.png'
 import linenSydneyEnsemble from './assets/wardrobe/linen-sydney-ensemble.png'
+import designerProvenance from './assets/sketchbook/Designer-provenance.jpg'
+import redRubyDressSketch from './assets/sketchbook/redRubyDress-1985motifs-sketch.jpg'
+import rubyRedSydney1985 from './assets/sketchbook/ruby-redSydney1985.jpeg'
+import rubyLaquerLinen from './assets/sketchbook/ruby-laquer-linen.png'
+import rubyLaquerLinenStraight from './assets/sketchbook/ruby-laquer-linen-straight.png'
+import rubyLinenLineDrawing from './assets/sketchbook/ruby-laquer-linendesignpendantmotifs.png'
 import windowTreesDress from './assets/window-trees/window-trees-dress.png'
 import windowTreesGarden from './assets/window-trees/window-trees-garden.jpeg'
 import whiteSatinSilkSkorts from './assets/edits/white-satin-silk-skorts1984.jpg'
@@ -12,6 +18,26 @@ import './App.css'
 
 const darkLuminousWrapImage =
   'https://res.cloudinary.com/dwpvbtoad/image/upload/v1782129318/summereveningWrap-2026_oa7cbw.png'
+
+const laquerPendantSwatch = new URL(
+  './assets/sketchbook/laquer-pendant-swatch.JPG',
+  import.meta.url,
+).href
+
+const laquerPendantDetail = new URL(
+  './assets/sketchbook/laquer-pendant.jpg',
+  import.meta.url,
+).href
+
+const laquerPendantTile = new URL(
+  './assets/sketchbook/laquer-pendant-tile.JPG',
+  import.meta.url,
+).href
+
+const laquerPendantRuby = new URL(
+  './assets/sketchbook/laquer-pendant-ruby.JPG',
+  import.meta.url,
+).href
 
 type Note = {
   title: string
@@ -36,6 +62,30 @@ type WardrobeItem = {
   isComingSoon?: boolean
   comingSoonCopy?: string
   originalUrl?: string
+}
+
+type CollectionCard = {
+  title: string
+  meta: string
+  detail: string
+  imageUrl: string
+  prefaceImageUrl?: string
+  prefaceCaption?: string
+  detailStudy?: {
+    title: string
+    imageUrl: string
+    notes: string[]
+  }[]
+  conceptStudy?: {
+    initialImageUrl: string
+    refinedImageUrl: string
+  }
+  secondaryImageUrl?: string
+  secondaryCaption?: string
+  finalImageUrl?: string
+  finalCaption?: string
+  featureImage?: boolean
+  isDocument?: boolean
 }
 
 type HoverCaptionProps = {
@@ -79,6 +129,14 @@ const engagementSkortSlides = [
 ]
 
 const archiveHeroSlides = [
+  {
+    src: rubyLaquerLinen,
+    alt: 'Ruby-lacquer linen dress with fitted waist photographed by the fireplace',
+  },
+  {
+    src: rubyLaquerLinenStraight,
+    alt: 'Straight ruby-lacquer linen dress photographed by the fireplace',
+  },
   {
     src: windowTreesDress,
     alt: 'Model wearing the luminous green Window Trees linen-cotton dress',
@@ -197,6 +255,7 @@ const notes: Note[] = [
 
 const navigationItems = [
   { label: 'Collections', href: '#notes' },
+  { label: 'Early Sketch Collection', href: '#early-sketch-collection', isSubItem: true },
   { label: '1984 Archive', href: '#blue-silk-cotton-work-dress' },
   { label: 'The Wardrobe', href: '#the-wardrobe' },
   { label: 'Stories', href: '#wardrobe-stories' },
@@ -225,6 +284,52 @@ const findings: Finding[] = [
   },
 ]
 
+const earlySketchCards: CollectionCard[] = [
+  {
+    title: 'Designer Provenance',
+    meta: 'Archive card',
+    detail:
+      'Provenance, materials, emotional notes, and era context for the ruby linen design.',
+    imageUrl: designerProvenance,
+    prefaceImageUrl: rubyRedSydney1985,
+    prefaceCaption: 'Original 1985 Darling Point dress inspiration for ruby laqueur dress',
+    detailStudy: [
+      {
+        title: 'Ruby-Lacquer Swatch',
+        imageUrl: laquerPendantDetail,
+        notes: ['Linen-Cotton Weave', 'Starched Texture', 'Ruby-Lacquer Tone'],
+      },
+      {
+        title: 'Motif Tile',
+        imageUrl: laquerPendantTile,
+        notes: ['Circular Ruby-Lacquer + Black-Jet Motif', 'Pencil Linework Repeat'],
+      },
+      {
+        title: 'Pendant Macro',
+        imageUrl: laquerPendantRuby,
+        notes: ['Rope Pearls', 'Jet Shimmer Beads', 'Ruby-Lacquer Pendant'],
+      },
+    ],
+    conceptStudy: {
+      initialImageUrl: laquerPendantSwatch,
+      refinedImageUrl: rubyLinenLineDrawing,
+    },
+    isDocument: true,
+  },
+  {
+    title: 'Ruby Linen Composition',
+    meta: 'Colour study',
+    detail:
+      'A ruby linen dress idea held with pendant motifs, swatches, and early proportion notes.',
+    imageUrl: rubyLaquerLinen,
+    secondaryImageUrl: redRubyDressSketch,
+    secondaryCaption: 'C1985 RUBY-LAQUER DRESS',
+    finalImageUrl: rubyLaquerLinenStraight,
+    finalCaption: 'Straight ruby-lacquer linen dress study.',
+    featureImage: true,
+  },
+]
+
 const wardrobeItems: WardrobeItem[] = [
   {
     title: 'Dove-Grey-Blue Dress · Reimagined',
@@ -246,19 +351,6 @@ const wardrobeItems: WardrobeItem[] = [
     comingSoonCopy: 'Preview image while this wardrobe note is prepared.',
     originalUrl:
       'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781730284/Munich-timeless-dressing_moera9.png',
-  },
-  {
-    title: 'White Shirt Mirror Study',
-    category: 'Early Sketch Collection',
-    description:
-      'A quiet white shirt portrait with warm mirror light, saved as a soft opening note for the sketch archive.',
-    price: 'Preview note',
-    imageUrl:
-      'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781875183/Clood-paper-cottontopCarousel_tnxube.png',
-    isComingSoon: true,
-    comingSoonCopy: 'Preview image while this piece is prepared.',
-    originalUrl:
-      'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781875183/Clood-paper-cottontopCarousel_tnxube.png',
   },
   {
     title: 'Linen Tailored Set',
@@ -296,19 +388,6 @@ const wardrobeItems: WardrobeItem[] = [
     isComingSoon: true,
     comingSoonCopy: 'Preview image while this Worn & Loved study is prepared.',
     originalUrl: 'https://res.cloudinary.com/dwpvbtoad/image/upload/v1781877150/worn-denim-study_jxa1n1.jpg',
-  },
-  {
-    title: 'Cotton Shirt Fragment',
-    category: 'Early Sketch Collection',
-    description:
-      'Crisp cotton, pearl buttons, sleeve folds, and the kind of shirt that makes a wardrobe feel edited.',
-    price: 'Archive note',
-    imageUrl:
-      'https://res.cloudinary.com/dwpvbtoad/image/upload/v1782313082/Early-sketch-cottonfragment_zn1rvl.png',
-    isComingSoon: true,
-    comingSoonCopy: 'Preview image while this early sketch note is prepared.',
-    originalUrl:
-      'https://res.cloudinary.com/dwpvbtoad/image/upload/v1782313082/Early-sketch-cottonfragment_zn1rvl.png',
   },
 ]
 
@@ -381,7 +460,12 @@ function App() {
             </button>
           </div>
           {navigationItems.map((item) => (
-            <a href={item.href} key={item.href} onClick={closeMenu}>
+            <a
+              className={item.isSubItem ? 'nav-sub-link' : undefined}
+              href={item.href}
+              key={item.href}
+              onClick={closeMenu}
+            >
               {item.label}
             </a>
           ))}
@@ -458,6 +542,120 @@ function App() {
               </article>
             ))}
           </div>
+          <section
+            className="collection-card-series"
+            aria-labelledby="early-sketch-series-title"
+          >
+            <div className="collection-series-heading">
+              <p className="eyebrow">Sketchbook collections</p>
+              <h3 id="early-sketch-series-title">Early Sketch Collection</h3>
+              <p>
+                First impressions, shapes, swatches, and the pieces that begin as a margin
+                note.
+              </p>
+            </div>
+            <div className="collection-card-grid">
+              {earlySketchCards.map((card) => (
+                <article
+                  className={`collection-card${card.isDocument ? ' collection-card--document' : ''}${card.featureImage ? ' collection-card--feature-image' : ''}`}
+                  key={card.title}
+                >
+                  {card.prefaceImageUrl && (
+                    <figure className="collection-card-preface">
+                      <img
+                        src={card.prefaceImageUrl}
+                        alt={card.prefaceCaption || card.title}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      {card.prefaceCaption && <figcaption>{card.prefaceCaption}</figcaption>}
+                    </figure>
+                  )}
+                  <figure>
+                    <img src={card.imageUrl} alt={card.title} loading="lazy" decoding="async" />
+                  </figure>
+                  {card.detailStudy && (
+                    <div className="collection-detail-study">
+                      {card.detailStudy.map((study) => (
+                        <figure key={study.title}>
+                          <figcaption>{study.title}</figcaption>
+                          <img
+                            src={study.imageUrl}
+                            alt={study.title}
+                            loading="lazy"
+                            decoding="async"
+                          />
+                          <ul>
+                            {study.notes.map((note) => (
+                              <li key={note}>{note}</li>
+                            ))}
+                          </ul>
+                        </figure>
+                      ))}
+                    </div>
+                  )}
+                  {card.conceptStudy && (
+                    <div className="collection-concept-study">
+                      <figure>
+                        <figcaption>Initial Concept</figcaption>
+                        <img
+                          src={card.conceptStudy.initialImageUrl}
+                          alt="Ruby lacquer linen fabric swatch"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        <ul>
+                          <li>Ruby-Lacquer Dress</li>
+                          <li>Sydney 1985</li>
+                          <li>Linen-Cotton, Starched</li>
+                        </ul>
+                      </figure>
+                      <figure>
+                        <figcaption>Refined Design</figcaption>
+                        <img
+                          src={card.conceptStudy.refinedImageUrl}
+                          alt="Line drawing of the ruby lacquer dress with pendant and shoe studies"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        <ul>
+                          <li>Studio Sketch</li>
+                          <li>Pendant + Shoe Close-ups</li>
+                        </ul>
+                      </figure>
+                    </div>
+                  )}
+                  {card.finalImageUrl && (
+                    <figure className="collection-card-final">
+                      <img
+                        src={card.finalImageUrl}
+                        alt={`${card.title} finished ruby linen dress`}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      {card.finalCaption && <figcaption>{card.finalCaption}</figcaption>}
+                    </figure>
+                  )}
+                  {card.secondaryImageUrl && (
+                    <figure className="collection-card-inset">
+                      <img
+                        src={card.secondaryImageUrl}
+                        alt={`${card.title} colour drawing`}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      {card.secondaryCaption && <figcaption>{card.secondaryCaption}</figcaption>}
+                    </figure>
+                  )}
+                  <div className="collection-card-copy">
+                    <p>{card.meta}</p>
+                    <h4>{card.title}</h4>
+                    <span>{card.detail}</span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
           <article
             id="window-trees-collection"
             className="window-trees-story"
