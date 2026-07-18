@@ -1213,7 +1213,7 @@ function App() {
           <div className="memory-sidebars">
           <section className="cultural-timeline" aria-labelledby="cultural-timeline-title">
             <p className="eyebrow">Sound · Cinema · Style</p>
-            <h3 id="cultural-timeline-title">1981–1986 · Cultural Timeline</h3>
+            <h3 id="cultural-timeline-title">1981–1986 / 87 · Cultural Timeline</h3>
             <ul>
               <li>
                 <strong>1981 Kicks off ...</strong>
