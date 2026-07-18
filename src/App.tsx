@@ -573,12 +573,24 @@ function App() {
         }
       })
       .filter((section): section is { id: string; top: number } => Boolean(section))
+      .sort((sectionA, sectionB) => sectionA.top - sectionB.top)
+      .reduce<{ id: string; top: number }[]>((uniqueSections, section) => {
+        const previousSection = uniqueSections.at(-1)
+
+        if (!previousSection || Math.abs(previousSection.top - section.top) > 12) {
+          uniqueSections.push(section)
+        }
+
+        return uniqueSections
+      }, [])
 
     const currentY = window.scrollY + headerOffset
-    const target =
+    const activeIndex = sectionPositions.findLastIndex((section) => section.top <= currentY + 8)
+    const targetIndex =
       direction === 'next'
-        ? sectionPositions.find((section) => section.top > currentY + 8)
-        : [...sectionPositions].reverse().find((section) => section.top < currentY - 8)
+        ? Math.min(activeIndex + 1, sectionPositions.length - 1)
+        : Math.max(activeIndex - 1, 0)
+    const target = sectionPositions[targetIndex]
 
     document.getElementById(target?.id ?? (direction === 'next' ? 'contact' : 'top'))?.scrollIntoView({
       behavior: 'smooth',
