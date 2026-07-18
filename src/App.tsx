@@ -53,6 +53,18 @@ type Finding = {
   description: string
 }
 
+type FieldNoteChapter = {
+  title: string
+  body: string[]
+  list?: string[]
+}
+
+type FieldNote = Finding & {
+  id: string
+  status: string
+  chapters?: FieldNoteChapter[]
+}
+
 type WardrobeItem = {
   title: string
   category: string
@@ -261,6 +273,7 @@ const navigationItems = [
   { label: 'The Wardrobe', href: '#the-wardrobe' },
   { label: 'Stories', href: '#wardrobe-stories' },
   { label: 'Journal', href: '#journal' },
+  { label: 'Field Notes', href: '#field-notes', isSubItem: true },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -274,27 +287,137 @@ const scrollStops = [
   'wardrobe-stories',
   'cultural-timeline',
   'journal',
+  'field-notes',
   'contact',
 ]
 
-const findings: Finding[] = [
+const fieldNotes: FieldNote[] = [
   {
+    id: 'field-note-01',
     title: 'The Useful Patina',
     meta: 'Field note 01',
     description:
       'A short guide to choosing vintage pieces with wear that adds character instead of noise.',
+    status: 'Ready to open',
+    chapters: [
+      {
+        title: 'What Useful Patina Means',
+        body: [
+          'Useful patina is wear that adds definition, not distraction.',
+          'It is the softening, fading, and shaping that comes from real use, not neglect. It is the difference between a piece that feels lived-in and one that feels worn down.',
+          'Useful patina gives an object presence. Noise interrupts. Patina enriches.',
+        ],
+      },
+      {
+        title: 'How to Recognise Useful Patina',
+        body: [
+          'These cues show the piece has been used well, not compromised.',
+        ],
+        list: [
+          'Wear should follow movement: elbows, hems, pockets, handles.',
+          'Structure should stay true: the piece must hold its line.',
+          'Fading should be even, not patchy.',
+          'Texture should feel settled, not weakened.',
+          'Repairs should be intentional, not messy.',
+        ],
+      },
+      {
+        title: 'The Natural Light Test',
+        body: [
+          'Hold the piece in natural light.',
+          'If the wear looks balanced, softened, and well-earned, keep it. If the wear looks threadbare, thinned, patchy, or visually loud, leave it.',
+          'This test helps you distinguish patina from damage.',
+        ],
+      },
+      {
+        title: 'Choosing Proportion',
+        body: [
+          'Choose proportion that still works today and has a timeless, settled quality.',
+          'A vintage piece should feel relevant, not costume. Proportion is the bridge between past and present.',
+        ],
+      },
+      {
+        title: 'The Movement Check',
+        body: [
+          'Try the garment on.',
+          'If it moves with you, the patina is beneficial. If it feels stiff, fragile, or resistant, the wear has become structural, and the piece should be avoided.',
+          'Patina should never interfere with comfort or movement.',
+        ],
+      },
+      {
+        title: 'Why Provenance Matters',
+        body: [
+          'Provenance gives the piece context and lineage.',
+          'It tells you where it lived, who wore it, and why it lasted. It turns vintage into story, not surplus.',
+          'A garment with provenance feels anchored. A garment without it feels anonymous.',
+        ],
+      },
+      {
+        title: 'How to Choose Pieces With Soul',
+        body: [
+          'Soul comes from clarity, restraint, and honest wear.',
+        ],
+        list: [
+          'Start with fabric feel. It should feel confident, not fragile.',
+          'Choose proportion that still works today.',
+          'Look for one defining detail: a pocket line, a button, a stitch.',
+          'Prefer colours that have softened gracefully.',
+          'Trust your first response. It is usually accurate.',
+        ],
+      },
+      {
+        title: 'How Clothes Become Reimagined',
+        body: [
+          'Reimagining is about refining the original intention.',
+          'It improves comfort, movement, or proportion without erasing the era. The best reimagined pieces keep the spirit of the garment while making it feel relevant now.',
+          'This is how vintage becomes current, not costume.',
+        ],
+      },
+      {
+        title: 'Where to Find Useful Patina',
+        body: [
+          'These places reward patience and curiosity.',
+        ],
+        list: [
+          'Antique fairs',
+          'Small vintage shops',
+          'Estate sales',
+          'Market stalls',
+          'Independent dealers',
+          'Family archives',
+        ],
+      },
+      {
+        title: 'Three Additional Tools',
+        body: [
+          'The Patina Test: natural light reveals whether wear is balanced or broken.',
+          'The Movement Check: movement reveals whether wear is character or deterioration.',
+          'The Continuity Rule: choose pieces you can continue wearing without hesitation.',
+        ],
+      },
+      {
+        title: 'Closing Note',
+        body: [
+          'Useful patina is the record of use: a way to choose vintage that feels lived-in, expressive, and ready for its next chapter.',
+        ],
+      },
+    ],
   },
   {
+    id: 'field-note-02',
     title: 'Small Rooms, Deep Mood',
     meta: 'Field note 02',
     description:
       'Layered textiles, framed fragments, and one brave color can make a corner feel collected.',
+    status: 'Next drawer',
   },
   {
+    id: 'field-note-03',
     title: 'Market Morning Checklist',
     meta: 'Field note 03',
     description:
       'Measurements, fabric feel, makers marks, and the polite art of walking away.',
+    status: 'Next drawer',
   },
 ]
 
@@ -1872,7 +1995,7 @@ function App() {
             <h2 id="journal-title">Three Pieces Ready To Grow</h2>
           </div>
           <div className="journal-list">
-            {findings.map((finding) => (
+            {fieldNotes.map((finding) => (
               <article className="journal-item" key={finding.title}>
                 <p>{finding.meta}</p>
                 <h3>{finding.title}</h3>
@@ -1880,6 +2003,67 @@ function App() {
               </article>
             ))}
           </div>
+          <section id="field-notes" className="field-notes-section" aria-labelledby="field-notes-title">
+            <div className="field-notes-heading">
+              <p className="eyebrow">Field notes</p>
+              <h3 id="field-notes-title">Open The Story</h3>
+              <span>
+                Short drawers for practical vintage guidance. Field Notes 02 and 03 sit beside
+                this first note as compact companions, ready to expand without adding a long
+                uninterrupted scroll.
+              </span>
+            </div>
+            <div className="field-note-drawer-grid">
+              {fieldNotes.map((note, noteIndex) => (
+                <details
+                  className={`field-note-drawer${note.chapters ? ' field-note-drawer--feature' : ''}`}
+                  id={note.id}
+                  open={noteIndex === 0}
+                  key={note.id}
+                >
+                  <summary>
+                    <span>
+                      <small>{note.meta}</small>
+                      <strong>{note.title}</strong>
+                    </span>
+                    <em>{note.status}</em>
+                  </summary>
+                  <div className="field-note-panel">
+                    <p>{note.description}</p>
+                    {note.chapters ? (
+                      <div className="field-note-chapters">
+                        {note.chapters.map((chapter, chapterIndex) => (
+                          <details className="field-note-chapter" key={chapter.title}>
+                            <summary>
+                              <span>{String(chapterIndex + 1).padStart(2, '0')}</span>
+                              <strong>{chapter.title}</strong>
+                            </summary>
+                            <div className="field-note-chapter-copy">
+                              {chapter.list && (
+                                <ul>
+                                  {chapter.list.map((item) => (
+                                    <li key={item}>{item}</li>
+                                  ))}
+                                </ul>
+                              )}
+                              {chapter.body.map((paragraph) => (
+                                <p key={paragraph}>{paragraph}</p>
+                              ))}
+                            </div>
+                          </details>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="field-note-coming-soon">
+                        This note will use the same drawer rhythm: a concise lead, short
+                        collapsible sections, and a calm mobile stack.
+                      </p>
+                    )}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </section>
         </section>
 
         <section id="contact" className="contact-section" aria-labelledby="contact-title">

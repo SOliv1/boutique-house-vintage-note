@@ -748,6 +748,7 @@ figure.collection-card-final {
 #wardrobe-stories,
 #cultural-timeline,
 #journal,
+#field-notes,
 #contact {
   scroll-margin-top: 110px;
 }
@@ -2062,6 +2063,194 @@ figure.collection-card-final {
   min-height: auto;
 }
 
+.field-notes-section {
+  display: grid;
+  gap: clamp(1rem, 3vw, 2rem);
+  margin-top: clamp(2rem, 5vw, 4rem);
+  padding-top: clamp(1.5rem, 4vw, 3rem);
+  border-top: 1px solid rgba(33, 28, 26, 0.14);
+}
+
+.field-notes-heading {
+  display: grid;
+  max-width: 820px;
+  gap: 0.35rem;
+}
+
+.field-notes-heading h3 {
+  font-size: clamp(2.2rem, 5vw, 4.3rem);
+}
+
+.field-notes-heading span {
+  max-width: 680px;
+  color: #4e4741;
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  line-height: 1.55;
+}
+
+.field-note-drawer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) repeat(2, minmax(220px, 0.85fr));
+  gap: 0.85rem;
+  align-items: start;
+}
+
+.field-note-drawer {
+  overflow: hidden;
+  border: 1px solid rgba(33, 28, 26, 0.16);
+  background: #fffaf2;
+}
+
+.field-note-drawer--feature {
+  background:
+    linear-gradient(135deg, rgba(35, 76, 86, 0.1), transparent 52%),
+    #f8efe6;
+}
+
+.field-note-drawer summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 34px;
+  gap: 1rem;
+  align-items: center;
+  min-height: 86px;
+  padding: clamp(1rem, 2.5vw, 1.45rem);
+  cursor: pointer;
+  list-style: none;
+}
+
+.field-note-drawer summary::-webkit-details-marker,
+.field-note-chapter summary::-webkit-details-marker {
+  display: none;
+}
+
+.field-note-drawer summary::after {
+  display: grid;
+  grid-column: 3;
+  grid-row: 1;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid rgba(33, 28, 26, 0.2);
+  color: #234c56;
+  content: '+';
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.field-note-drawer[open] summary::after {
+  background: #213f3a;
+  color: #fffaf2;
+  content: '-';
+}
+
+.field-note-drawer summary span {
+  display: grid;
+  min-width: 0;
+  gap: 0.4rem;
+}
+
+.field-note-drawer summary small,
+.field-note-drawer summary em {
+  color: #7a332c;
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.field-note-drawer summary strong {
+  color: #211c1a;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.6rem, 3vw, 2.35rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.field-note-drawer summary em {
+  justify-self: end;
+  color: #234c56;
+}
+
+.field-note-panel {
+  display: grid;
+  gap: 1rem;
+  padding: 0 clamp(1rem, 2.5vw, 1.45rem) clamp(1rem, 2.5vw, 1.45rem);
+  color: #4e4741;
+  content-visibility: auto;
+  contain-intrinsic-size: 420px;
+}
+
+.field-note-panel>p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.field-note-chapters {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.field-note-chapter {
+  border-top: 1px solid rgba(33, 28, 26, 0.13);
+}
+
+.field-note-chapter summary {
+  display: grid;
+  grid-template-columns: 2.35rem minmax(0, 1fr);
+  gap: 0.8rem;
+  align-items: center;
+  min-height: 58px;
+  padding: 0.75rem 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.field-note-chapter summary span {
+  display: grid;
+  width: 2.35rem;
+  height: 2.35rem;
+  place-items: center;
+  border: 1px solid rgba(35, 76, 86, 0.2);
+  color: #234c56;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.field-note-chapter summary strong {
+  color: #213f3a;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.3rem, 2.4vw, 1.85rem);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.field-note-chapter-copy {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0 0 1rem 3.15rem;
+  color: #4e4741;
+  line-height: 1.58;
+}
+
+.field-note-chapter-copy p {
+  margin: 0;
+}
+
+.field-note-chapter-copy ul {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.field-note-coming-soon {
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(33, 28, 26, 0.13);
+}
+
 .site-footer {
   display: grid;
   gap: 1.5rem;
@@ -2547,6 +2736,10 @@ figure.collection-card-final {
     grid-template-columns: 1fr;
   }
 
+  .field-note-drawer-grid {
+    grid-template-columns: 1fr;
+  }
+
   .collection-series-heading {
     position: static;
   }
@@ -2680,6 +2873,25 @@ figure.collection-card-final {
   .collector-era-soundtrack li {
     grid-template-columns: 1fr;
     gap: 0.25rem;
+  }
+
+  .field-note-drawer summary {
+    grid-template-columns: minmax(0, 1fr) 34px;
+  }
+
+  .field-note-drawer summary em {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start;
+  }
+
+  .field-note-drawer summary::after {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  .field-note-chapter-copy {
+    padding-left: 0;
   }
 
   .hover-caption::after {
