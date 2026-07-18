@@ -1989,24 +1989,11 @@ function App() {
           </div>
         </section>
 
-        <section id="journal" className="content-section journal-section" aria-labelledby="journal-title">
-          <div className="section-heading">
-            <p className="eyebrow">Journal starters</p>
-            <h2 id="journal-title">Three Pieces Ready To Grow</h2>
-          </div>
-          <div className="journal-list">
-            {fieldNotes.map((finding) => (
-              <article className="journal-item" key={finding.title}>
-                <p>{finding.meta}</p>
-                <h3>{finding.title}</h3>
-                <span>{finding.description}</span>
-              </article>
-            ))}
-          </div>
+        <section id="journal" className="content-section journal-section" aria-labelledby="field-notes-title">
           <section id="field-notes" className="field-notes-section" aria-labelledby="field-notes-title">
             <div className="field-notes-heading">
               <p className="eyebrow">Field notes</p>
-              <h3 id="field-notes-title">Open The Story</h3>
+              <h2 id="field-notes-title">Open The Story</h2>
               <span>
                 Short drawers for practical vintage guidance. Field Notes 02 and 03 sit beside
                 this first note as compact companions, ready to expand without adding a long

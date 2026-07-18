@@ -338,8 +338,7 @@ h3 {
   gap: 1rem;
 }
 
-.note-card,
-.journal-item {
+.note-card {
   display: flex;
   min-height: 300px;
   flex-direction: column;
@@ -349,8 +348,7 @@ h3 {
   background: rgba(255, 250, 242, 0.78);
 }
 
-.note-card p,
-.journal-item p {
+.note-card p {
   margin: 0;
   color: #7a332c;
   font-size: 0.78rem;
@@ -360,7 +358,6 @@ h3 {
 }
 
 .note-card span,
-.journal-item span,
 .split-section p {
   color: #4e4741;
   font-size: 1.02rem;
@@ -2054,21 +2051,9 @@ figure.collection-card-final {
   color: #8c2633;
 }
 
-.journal-list {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.journal-item {
-  min-height: auto;
-}
-
 .field-notes-section {
   display: grid;
   gap: clamp(1rem, 3vw, 2rem);
-  margin-top: clamp(2rem, 5vw, 4rem);
-  padding-top: clamp(1.5rem, 4vw, 3rem);
-  border-top: 1px solid rgba(33, 28, 26, 0.14);
 }
 
 .field-notes-heading {
@@ -2077,7 +2062,7 @@ figure.collection-card-final {
   gap: 0.35rem;
 }
 
-.field-notes-heading h3 {
+.field-notes-heading h2 {
   font-size: clamp(2.2rem, 5vw, 4.3rem);
 }
 
