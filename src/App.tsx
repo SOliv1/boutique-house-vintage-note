@@ -1216,6 +1216,25 @@ function App() {
             <h3 id="cultural-timeline-title">1981–1986 · Cultural Timeline</h3>
             <ul>
               <li>
+                <strong>1981 Kicks off ...</strong>
+                <span>
+                  Vangelis releases{' '}
+                  <a
+                    className="music-link"
+                    href="https://youtu.be/8a-HfNE3EIo?si=6e272tYZKUYb6O4Y"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <em>
+                      <HoverCaption caption="1981 · Vangelis · Bright, heroic, steady, pulse, electronic.">
+                        Chariots of Fire
+                      </HoverCaption>
+                    </em>
+                  </a>
+                   , my favourite epic track in Adelaide, South Australia from September 1981, filled with memories of dear friends from that time.
+                </span>
+              </li>
+              <li>
                 <strong>1981</strong>
                 <span>
                   Phil Collins releases{' '}
