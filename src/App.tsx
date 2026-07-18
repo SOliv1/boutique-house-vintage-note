@@ -256,11 +256,25 @@ const notes: Note[] = [
 const navigationItems = [
   { label: 'Collections', href: '#notes' },
   { label: 'Early Sketch Collection', href: '#early-sketch-collection', isSubItem: true },
+  { label: 'Cultural Timeline', href: '#cultural-timeline', isSubItem: true },
   { label: '1984 Archive', href: '#blue-silk-cotton-work-dress' },
   { label: 'The Wardrobe', href: '#the-wardrobe' },
   { label: 'Stories', href: '#wardrobe-stories' },
   { label: 'Journal', href: '#journal' },
   { label: 'Contact', href: '#contact' },
+]
+
+const scrollStops = [
+  'top',
+  'notes',
+  'early-sketch-collection',
+  'window-trees-collection',
+  'blue-silk-cotton-work-dress',
+  'the-wardrobe',
+  'wardrobe-stories',
+  'cultural-timeline',
+  'journal',
+  'contact',
 ]
 
 const findings: Finding[] = [
@@ -420,6 +434,34 @@ function App() {
   }, [isMenuOpen])
 
   const closeMenu = () => setIsMenuOpen(false)
+
+  const scrollToNeighbourSection = (direction: 'previous' | 'next') => {
+    const headerOffset = 120
+    const sectionPositions = scrollStops
+      .map((id) => {
+        const element = document.getElementById(id)
+        if (!element) {
+          return null
+        }
+
+        return {
+          id,
+          top: element.getBoundingClientRect().top + window.scrollY,
+        }
+      })
+      .filter((section): section is { id: string; top: number } => Boolean(section))
+
+    const currentY = window.scrollY + headerOffset
+    const target =
+      direction === 'next'
+        ? sectionPositions.find((section) => section.top > currentY + 8)
+        : [...sectionPositions].reverse().find((section) => section.top < currentY - 8)
+
+    document.getElementById(target?.id ?? (direction === 'next' ? 'contact' : 'top'))?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
+  }
 
   return (
     <div className="site-shell">
@@ -1211,7 +1253,7 @@ function App() {
             </div>
           </section>
           <div className="memory-sidebars">
-          <section className="cultural-timeline" aria-labelledby="cultural-timeline-title">
+          <section id="cultural-timeline" className="cultural-timeline" aria-labelledby="cultural-timeline-title">
             <p className="eyebrow">Sound · Cinema · Style</p>
             <h3 id="cultural-timeline-title">1981–1986 / 87 · Cultural Timeline</h3>
             <ul>
@@ -1911,6 +1953,22 @@ function App() {
           <a href="#top">Back to top ↑</a>
         </div>
       </footer>
+      <div className="section-scroll-controls" aria-label="Page section controls">
+        <button
+          type="button"
+          aria-label="Jump to previous section"
+          onClick={() => scrollToNeighbourSection('previous')}
+        >
+          ↑
+        </button>
+        <button
+          type="button"
+          aria-label="Jump to next section"
+          onClick={() => scrollToNeighbourSection('next')}
+        >
+          ↓
+        </button>
+      </div>
     </div>
   )
 }

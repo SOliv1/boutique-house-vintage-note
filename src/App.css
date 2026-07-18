@@ -67,6 +67,44 @@
   font-size: 0.78rem;
 }
 
+.section-scroll-controls {
+  position: fixed;
+  right: clamp(0.8rem, 2vw, 1.35rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  z-index: 9;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.section-scroll-controls button {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid rgba(255, 250, 242, 0.52);
+  border-radius: 50%;
+  background: rgba(33, 28, 26, 0.78);
+  box-shadow: 0 12px 30px rgba(33, 28, 26, 0.22);
+  color: #fffaf2;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  backdrop-filter: blur(10px);
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.section-scroll-controls button:hover,
+.section-scroll-controls button:focus-visible {
+  background: #8c2633;
+  transform: translateY(-1px);
+}
+
+.section-scroll-controls button:focus-visible {
+  outline: 3px solid #fff4cc;
+  outline-offset: 3px;
+}
+
 .mobile-menu-toggle,
 .mobile-menu-heading,
 .mobile-menu-backdrop {
@@ -703,9 +741,12 @@ figure.collection-card-final {
 }
 
 #notes,
+#early-sketch-collection,
+#window-trees-collection,
 #blue-silk-cotton-work-dress,
 #the-wardrobe,
 #wardrobe-stories,
+#cultural-timeline,
 #journal,
 #contact {
   scroll-margin-top: 110px;
@@ -2403,6 +2444,17 @@ figure.collection-card-final {
 
   body.mobile-menu-open {
     overflow: hidden;
+  }
+
+  .section-scroll-controls {
+    right: 0.85rem;
+    bottom: 0.85rem;
+  }
+
+  .section-scroll-controls button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.12rem;
   }
 
   .hero-section,
